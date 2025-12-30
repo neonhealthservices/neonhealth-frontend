@@ -1,8 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { Heart, Ambulance, ClipboardList, Hospital } from 'lucide-react';
+import Link from 'next/link';
 
-const CardiologyServices = () => {
+interface CardiologyServiceProps {
+  OnlyWhyNeonService?: boolean;
+  ShowMoreServices?: boolean;
+}
+
+
+
+const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = false }: CardiologyServiceProps) => {
   const services = [
     {
       image: "/images/heart-stethoscope.png", 
@@ -18,6 +26,54 @@ const CardiologyServices = () => {
       image: "/images/cardiac-monitor.png", 
       alt: "ECG cardiac monitor",
       title: "ECG and cardiac monitoring consultations"
+    }
+  ];
+
+  const moreServices = [
+    {
+      image: "/images/throat.png",
+      alt: "Endocrinology",
+      title: "Endocrinology"
+    },
+    {
+      image: "/images/brain.jpg",
+      alt: "Neurology",
+      title: "Neurology"
+    },
+    {
+      image: "/images/kidney.jpg",
+      alt: "Urology",
+      title: "Urology"
+    },
+    {
+      image: "/images/lungs.jpg",
+      alt: "Pulmonology",
+      title: "Pulmonology"
+    },
+    {
+      image: "/images/blood-test.png",
+      alt: " Hematology",
+      title: " Hematology"
+    },
+    {
+      image: "/images/lady.png",
+      alt: " Dermatology",
+      title: " Dermatology"
+    },
+    {
+      image: "/images/pregnant.jpg",
+      alt: "Obstetrics and Gynaecology",
+      title: "Obstetrics and Gynaecology"
+    },
+    {
+      image: "/images/baby.jpg",
+      alt: "Paediatrics",
+      title: "Paediatrics"
+    },
+    {
+      image: "/images/general-surgery.jpg",
+      alt: " General Surgery",
+      title: "General Surgery"
     }
   ];
 
@@ -41,9 +97,11 @@ const CardiologyServices = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4">
+    <div className={`${!OnlyWhyNeonService ? 'min-h-screen' : ''} bg-white py-16 px-4`}>
       <div className="max-w-6xl mx-auto">
-        {/* Cardiology Services Section */}
+        {!OnlyWhyNeonService && (
+          <div>
+              {/* Cardiology Services Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Cardiology Services
@@ -79,14 +137,56 @@ const CardiologyServices = () => {
         </div>
 
         {/* See More Button */}
-        <div className="text-center mb-20">
-          <button className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
+       {!ShowMoreServices && (
+         <div className="text-center mb-20">
+          <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
             See More
-          </button>
+          </Link>
         </div>
+       )}
 
+          </div>
+        )}
+        {/* More Services Section */}
+        {ShowMoreServices && (
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Other Services Include
+              </h2>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Comprehensive cardiology services tailored to meet all your cardiovascular health needs
+              </p>
+            </div>
+
+            {/* More Services Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+              {moreServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg text-center "
+                >
+                  <div className="flex justify-center mb-6">
+                    <div className="relative w-84 h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.alt}
+                        fill
+                        className="object-cover rounded-md"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {service.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {/* Why Neon Service Section */}
-        <div className="mb-16">
+        {!ShowMoreServices && (
+          <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Why Neon Service
@@ -113,7 +213,8 @@ const CardiologyServices = () => {
               </div>
             ))}
           </div>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

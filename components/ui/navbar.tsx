@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {  Menu, X } from 'lucide-react';
 
 // Navbar Component
@@ -24,20 +25,22 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Home</a>
-            <a href="#about" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">About Us</a>
-            <a href="#services" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Services</a>
-            <a href="#contact" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Contact Us</a>
-            <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Blog</a>
+            <Link href="/" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Home</Link>
+            <Link href="/about" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">About Us</Link>
+            <Link href="/services" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Services</Link>
+            <Link href="/contact" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Contact Us</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Blog</Link>
           </div>
 
           {/* Book Appointment Button - Desktop */}
-          <button 
+          <Link href="/contact" >
+            <button 
             className="hidden md:block px-6 py-2.5 text-white font-medium rounded-md shadow-md hover:opacity-90 transition-opacity"
             style={{ backgroundColor: '#1a7f7a' }}
           >
             Book Appointment
           </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -52,17 +55,14 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <a href="#home" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Home</a>
-              <a href="#about" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">About Us</a>
-              <a href="#services" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Services</a>
-              <a href="#contact" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Contact Us</a>
-              <a href="#blog" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Blog</a>
-              <button 
-                className="px-6 py-2.5 text-white font-medium rounded-md shadow-md hover:opacity-90 transition-opacity w-full"
-                style={{ backgroundColor: '#1a7f7a' }}
-              >
+              <Link href="/" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Home</Link>
+              <Link href="/about" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">About Us</Link>
+              <Link href="/services" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Services</Link>
+              <Link href="/contact" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Contact Us</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Blog</Link>
+              <Link href="/contact" className="px-6 py-2.5 text-white font-medium rounded-md shadow-md hover:opacity-90 transition-opacity w-full">
                 Book Appointment
-              </button>
+              </Link>
             </div>
           </div>
         )}

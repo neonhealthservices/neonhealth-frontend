@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -32,12 +33,9 @@ export default function HeroSection() {
             </p>
 
             {/* CTA Button */}
-            <button 
-              className="px-8 py-3 text-white font-medium rounded-md shadow-lg hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#1a7f7a' }}
-            >
-              Explore Our Services
-            </button>
+           <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
+            Explore Our Services
+          </Link>
           </div>
         </div>
       </div>
@@ -63,7 +61,7 @@ export default function HeroSection() {
             <div className="flex items-start gap-3">
               <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
               <div>
-                <div className="font-medium">Email: nearhealthservices@gmail.com</div>
+                <div className="font-medium">Email: neonhealthservices@gmail.com</div>
               </div>
             </div>
 

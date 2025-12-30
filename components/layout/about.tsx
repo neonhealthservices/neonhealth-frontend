@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function AboutUs() {
@@ -34,9 +35,9 @@ export default function AboutUs() {
             </div>
 
             <div className="pt-4">
-              <button className="px-8 py-3 bg-white text-[#1a7f7a] border-2 border-[#1a7f7a] rounded-lg font-semibold text-lg hover:bg-[#ECF9F7] hover:text-[#1a7f7a] cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg">
+              <Link href="/about" className="px-8 py-3 bg-white text-[#1a7f7a] border-2 border-[#1a7f7a] rounded-lg font-semibold text-lg hover:bg-[#ECF9F7] hover:text-[#1a7f7a] cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg">
                 Get To Know Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>

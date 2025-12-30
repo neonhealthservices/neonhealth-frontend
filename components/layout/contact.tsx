@@ -10,6 +10,9 @@ export default function ContactForm() {
     message: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -18,21 +21,39 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!formData.fullName || !formData.email || !formData.message) {
       alert('Please fill in all fields');
       return;
     }
 
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
-    setFormData({ fullName: '', email: '', message: '' });
+    setLoading(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setShowSuccessModal(true);
+        setFormData({ fullName: '', email: '', message: '' });
+      } else {
+        alert('Failed to send message: ' + (data.message || 'Unknown error'));
+      }
+    } catch (error) {
+      alert('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-[100vw] md:max-w-[90vw] lg:max-w-[60vw] mx-auto">
-        
+
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">Contact Us</h1>
@@ -47,7 +68,7 @@ export default function ContactForm() {
           {/* Contact Info (Overflow Panel) */}
           <div className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[20%] 
             bg-teal-600 text-white p-10 h-[85%] w-[45%] z-10 shadow-xl">
-            
+
             <div className="space-y-8">
               {/* Address */}
               <div className="flex items-start gap-4">
@@ -128,9 +149,10 @@ export default function ContactForm() {
               <div className="flex justify-center">
                 <button
                   onClick={handleSubmit}
-                  className="px-8 py-3 bg-white text-[#1a7f7a] border-2 border-[#1a7f7a] rounded-lg font-semibold text-lg hover:bg-[#ECF9F7] hover:text-[#1a7f7a] cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg"
+                  disabled={loading}
+                  className={`px-8 py-3 bg-white text-[#1a7f7a] border-2 border-[#1a7f7a] rounded-lg font-semibold text-lg hover:bg-[#ECF9F7] hover:text-[#1a7f7a] cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
-                  Send
+                  {loading ? 'Sending...' : 'Send'}
                 </button>
               </div>
             </div>
@@ -138,6 +160,27 @@ export default function ContactForm() {
 
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-in fade-in duration-300">
+          <div className="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl transform transition-all scale-100">
+            <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-teal-50 mb-6">
+              <svg className="h-10 w-10 text-[#1a7f7a] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+            <p className="text-gray-500 mb-8 leading-relaxed">Thank you for reaching out. We will get back to you shortly.</p>
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="w-full py-3.5 bg-[#1a7f7a] text-white rounded-xl font-bold text-lg hover:bg-teal-700 transition-colors shadow-lg hover:shadow-xl"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

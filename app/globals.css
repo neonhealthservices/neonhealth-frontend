@@ -22,13 +22,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geom), sans-serif;
+  color: black;
 }
 
-button{
+button {
   cursor: pointer;
 }
-input, textarea{
+
+input,
+textarea {
   color: black;
   border: 0.5px solid #d3d3d3
-  
 }
