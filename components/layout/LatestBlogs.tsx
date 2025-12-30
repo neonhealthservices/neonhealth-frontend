@@ -40,8 +40,8 @@ export default async function LatestBlogs() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {blogs.map((blog: any) => (
-                        <BlogCard key={blog._id} blog={blog} />
+                    {blogs.map((blog: any, index: number) => (
+                        <BlogCard key={blog._id} blog={blog} index={index} />
                     ))}
                 </div>
 

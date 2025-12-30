@@ -1,15 +1,21 @@
+'use client';
+
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Hero Section */}
       <div className="relative h-full flex items-center">
-        {/* Background Image */}
+        {/* Background Image - static for performance, or subtle scale */}
         <div className="absolute inset-0">
-          <img
+          <motion.img
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5 }}
             src="/images/man-in-suit.png"
             alt="Healthcare Professional"
             className="w-full h-full object-contain object-right"
@@ -22,26 +28,43 @@ export default function HeroSection() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full max-sm:pb-32">
           <div className="max-w-2xl">
             {/* Main Heading */}
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6" style={{ color: '#1a7f7a' }}>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
+              style={{ color: '#1a7f7a' }}
+            >
               Leading Cardiovascular<br />Care for Healthier Lives
-            </h1>
+            </motion.h1>
 
             {/* Subheading */}
-            <p className="text-gray-700 text-base lg:text-lg mb-8 leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-gray-700 text-base lg:text-lg mb-8 leading-relaxed"
+            >
               Advanced cardiovascular care delivered with integrity, compassion, and expertise<br />
               — supported by a multidisciplinary medical team and modern technology.
-            </p>
+            </motion.p>
 
             {/* CTA Button */}
-           <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
-            Explore Our Services
-          </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300 inline-block">
+                Explore Our Services
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* Bottom Contact Bar */}
-      <div 
+      <div
         className="absolute bottom-0 left-0 right-0 text-white py-4 px-6"
         style={{ backgroundColor: '#1a7f7a' }}
       >

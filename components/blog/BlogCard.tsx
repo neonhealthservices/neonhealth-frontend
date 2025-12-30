@@ -3,14 +3,23 @@
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { IBlog } from '@/types/blog';
+import { motion } from 'framer-motion';
 
 interface BlogCardProps {
     blog: IBlog;
+    index?: number;
 }
 
-export default function BlogCard({ blog }: BlogCardProps) {
+export default function BlogCard({ blog, index = 0 }: BlogCardProps) {
     return (
-        <div className="group flex flex-col h-full bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ y: -8 }}
+            className="group flex flex-col h-full bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+        >
             {blog.coverImage && (
                 <div className="h-48 overflow-hidden">
                     <img
@@ -55,6 +64,6 @@ export default function BlogCard({ blog }: BlogCardProps) {
                     )}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

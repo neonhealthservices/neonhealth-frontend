@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
+import '@/models/Admin'; // Register Admin model
 import Blog from '@/models/Blog';
 import { authenticate } from '@/middleware/auth';
 import { generateSlug, calculateReadingTime, truncateText, stripHtml } from '@/lib/utils';
