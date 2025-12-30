@@ -62,6 +62,7 @@ export default function Navbar() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
+              key="mobile-menu"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}

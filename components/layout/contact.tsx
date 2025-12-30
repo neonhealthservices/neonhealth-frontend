@@ -51,7 +51,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
+    <div className="min-h-screen bg-gray-50 max-sm:pt-32 md:pt-28 lg:pt-12 py-12 px-4">
       <div className="max-w-[100vw] md:max-w-[90vw] lg:max-w-[60vw] mx-auto">
 
         {/* Header */}
