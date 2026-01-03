@@ -45,11 +45,7 @@ export default function AboutSection() {
         <div className="bg-teal-50 rounded-3xl p-8  border border-teal-100">
           <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our mission is to reduce the scourge of peripartum cardiomyopathy through awareness 
-            campaigns, screenings, and support for patients and families. With PPCM being one of 
-            the leading causes of maternal mortality in Nigeria, we believe urgent action is needed 
-            to empower communities with knowledge and resources. Our mission also encompasses our 
-            ongoing research in this field.
+            Our mission is to reduce the scourge of peripartum cardiomyopathy through awareness campaigns, screenings, and support for patients and families. With PPCM being one of the leading causes of maternal mortality in Nigeria, we believe urgent action is needed to empower communities with knowledge and resources. Our mission also encompasses our ongoing research in this field.
           </p>
         </div>
 
@@ -57,13 +53,7 @@ export default function AboutSection() {
         <div className="bg-blue-100 rounded-3xl p-8 border border-blue-200">
           <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our vision is a future Nigeria where PPCM is detected early, properly treated, and 
-            possibly cured, ensuring nationwide reduction in maternal and neonatal morbidity and 
-            mortality. Our vision also entails the construction of an ultra-modern Cardiac Centre, 
-            featuring a Cardiac Catheterization Lab and a Cardiac Intensive Care Unit, specifically 
-            designed for the care of individuals with PPCM who may require device therapy or cardiac 
-            surgery. We also hope to conduct some clinical drug trials in the near future, under the 
-            proper guidance of our nation's regulatory bodies.
+           Our vision is a future Nigeria where Peripartum cardiomyopathy is detected early, properly treated, and possibly cured, ensuring nationwide reduction in maternal and neonatal morbidity and mortality. Our vision also entails the construction of an ultra-modern Cardiac Centre, featuring a Cardiac Catheterization Lab and a Cardiac Intensive Care Unit, specifically designed for the care of individuals with PPCM who may require device therapy or cardiac surgery. We also hope to conduct some clinical drug trials in the near future, under the proper guidance of our nation's regulatory bodies.
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ function page() {
   return (
     <div>
       <Navbar/>
-      <div className='lg:pt-20'>
+      <div className=' md:pt-10 lg:pt-20 bg-gray-50'>
         <ContactForm/>
       </div>
       <Footer/>

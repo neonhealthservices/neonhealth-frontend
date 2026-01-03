@@ -29,31 +29,28 @@ export default function AdminLayout({
         setLoading(false);
     }, [pathname, router]);
 
-    if (loading) {
-        return (
-            <div className="min-h-screen flex justify-center items-center bg-gray-50">
-                <LoadingSpinner size="lg" />
-            </div>
-        );
-    }
-
-    // If on login page, render without sidebar
-    if (pathname === '/admin/login') {
-        return <>{children}</>;
-    }
-
     return (
-        <div className="flex bg-gray-50 min-h-screen">
-            <AdminNav />
-            <div className="flex-1 flex flex-col overflow-hidden">
-                <header className="md:hidden bg-white shadow-sm p-4 flex justify-between items-center">
-                    <h1 className="text-xl font-bold text-gray-800">Admin Panel</h1>
-                    {/* Mobile menu button could go here */}
-                </header>
-                <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-8">
-                    {children}
-                </main>
-            </div>
-        </div>
+        <>
+            {loading ? (
+                <div className="min-h-screen flex justify-center items-center bg-gray-50">
+                    <LoadingSpinner size="lg" />
+                </div>
+            ) : pathname === '/admin/login' ? (
+                <>{children}</>
+            ) : (
+                <div className="flex bg-gray-50 min-h-screen">
+                    <AdminNav />
+                    <div className="flex-1 flex flex-col overflow-hidden">
+                        <header className="md:hidden bg-white shadow-sm p-4 flex justify-between items-center">
+                            <h1 className="text-xl font-bold text-gray-800">Admin Panel</h1>
+                            {/* Mobile menu button could go here */}
+                        </header>
+                        <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-8">
+                            {children}
+                        </main>
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
