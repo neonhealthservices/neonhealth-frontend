@@ -166,7 +166,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
                   key={index}
                   className="rounded-lg text-center "
                 >
-                  <div className="flex justify-center mb-6">
+                  <div className="flex justify-center mb-0">
                     <div className="relative w-84 h-64">
                       <Image
                         src={service.image}
@@ -176,7 +176,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
                       />
                     </div>
                   </div>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-gray-700 text-base mb-3 mt-0.5 font-bold leading-relaxed">
                     {service.title}
                   </p>
                 </div>
@@ -189,7 +189,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
           <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Neon Service
+              Why Neon Services
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               We provide comprehensive cardiovascular care supported by adequate

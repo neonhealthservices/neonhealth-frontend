@@ -26,12 +26,10 @@ export default function AboutUs() {
             
             <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                We are honoured to introduce the <span className="font-semibold">NEON HEART FOUNDATION</span>, a non-governmental, nonprofit organization, launched 3months ago, and dedicated to improving cardiovascular health and saving lives through education, prevention, and access to care. Neon Heart Foundation is focused on Pregnancy-induced cardiomyopathy, otherwise called Peripartum Cardiomyopathy (PPCM).
+                 Neon Health Services is a cardiology-based specialist hospital with a strong focus on the diagnosis, treatment, and management of cardiovascular, vascular, and metabolic disorders. We are committed to delivering excellent, patient-centred care through integrity, compassion, and teamwork. 
               </p>
               
-              <p>
-                Since its inception, we have been able to provide free Echocardiography and ECG for PPCM patients.
-              </p>
+              
             </div>
 
             <div className="pt-4">
