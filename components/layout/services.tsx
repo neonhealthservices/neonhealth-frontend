@@ -13,23 +13,68 @@ interface CardiologyServiceProps {
 const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = false }: CardiologyServiceProps) => {
   const services = [
     {
-      image: "/images/heart-stethoscope.png", 
+      image: "/images/chest-heart.png", 
       alt: "Heart and stethoscope",
-      title: "Focused care for the heart, delivered with precision"
+      title: "Heart Disease"
     },
     {
-      image: "/images/drop.png", 
+      image: "/images/vascular.png", 
       alt: "Blood pressure monitoring",
-      title: "Blood pressure & heart disease management"
+      title: "Vascular Disorder"
     },
     {
-      image: "/images/cardiac-monitor.png", 
+      image: "/images/metabolic.png", 
       alt: "ECG cardiac monitor",
-      title: "ECG and cardiac monitoring consultations"
+      title: "Metabolic Disorder"
+    },
+    {
+      image: "/images/holter.png", 
+      alt: "Heart and stethoscope",
+      title: "Holter ECG"
+    },
+    {
+      image: "/images/doppler.png", 
+      alt: "Blood pressure monitoring",
+      title: "Doppler Ultrasonography"
+    },
+    {
+      image: "/images/Electroencephalogram.png", 
+      alt: "ECG cardiac monitor",
+      title: "Electroencephalogram (EEG)"
     }
   ];
 
   const moreServices = [
+     {
+      image: "/images/physio.png",
+      alt: "Physiotherapy",
+      title: "Physiotherapy"
+    },
+    {
+      image: "/images/ultra-sound.png",
+      alt: "Ultra Sound",
+      title: "Ultra Sound"
+    },
+    {
+      image: "/images/nephro.png",
+      alt: "Nephrology",
+      title: "Nephrology"
+    },
+     {
+      image: "/images/psych.png",
+      alt: "Psychology",
+      title: "Psychology"
+    },
+    {
+      image: "/images/gastro.png",
+      alt: "Gastroenterology",
+      title: "Gastroenterology"
+    },
+    {
+      image: "/images/tests.png",
+      alt: "Blood Tests",
+      title: "Over 1000 Blood Tests"
+    },
     {
       image: "/images/throat.png",
       alt: "Endocrinology",
@@ -113,23 +158,23 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
         </div>
 
         {/* Services Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-4 mb-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-blue-50 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300"
+              className="rounded-lg text-center"
             >
-              <div className="flex justify-center mb-6">
-                <div className="relative w-32 h-32">
+              <div className="flex justify-center mb-0">
+                <div className="relative w-84 h-64">
                   <Image
                     src={service.image}
                     alt={service.alt}
                     fill
-                    className="object-contain"
+                    className="object-cover rounded-md"
                   />
                 </div>
               </div>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-gray-700 text-base mb-3 mt-0.5 font-bold leading-relaxed">
                 {service.title}
               </p>
             </div>
