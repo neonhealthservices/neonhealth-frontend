@@ -52,12 +52,6 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
       alt: "Echocardiography",
       title: "Echocardiography"
     },
-    {
-      image: "/images/pacemaker.jpg",
-      alt: "Logistics for devices & Stenting",
-      title: "Logistics For Devices"
-    },
-
 
   ];
 
@@ -136,7 +130,14 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
       image: "/images/general-surgery.jpg",
       alt: " General Surgery",
       title: "General Surgery"
-    }
+    },
+    {
+      image: "/images/pacemaker.jpg",
+      alt: "Logistics for devices & Stenting",
+      title: "Logistics For Devices"
+    },
+
+
   ];
 
   const features = [
