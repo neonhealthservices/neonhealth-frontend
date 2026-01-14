@@ -8,10 +8,10 @@ import React from 'react'
 function page() {
   return (
     <div className='bg-white'>
-      <Navbar/>
-     
+      <Navbar />
+
       {/* Hero Section */}
-      <div className="relative w-full h-134 bg-cover bg-center" style={{backgroundImage: `url('/images/reception.png')`}}>
+      <div className="relative w-full h-134 bg-cover bg-center" style={{ backgroundImage: `url('/images/reception.png')` }}>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
           <h1 className="text-5xl font-bold mb-4 text-center">About Us</h1>
@@ -19,25 +19,25 @@ function page() {
         </div>
       </div>
 
-       <AboutSection/>
+      <AboutSection />
 
-       <div className='text-center space-y-6 md:max-w-5xl md:mx-auto mt-16 mb-20'>
+      <div className='text-center space-y-6 md:max-w-5xl md:mx-auto mt-16 mb-20'>
         <h1 className='text-3xl font-bold '>Introducing Neon Heath Foundation</h1>
-        <p className='md:text-start font-extralight text-black/70'>Neon Health Services is a cardiology-based specialist hospital with a strong focus on the diagnosis, treatment, and management of cardiovascular, vascular, and metabolic disorders. We are committed to delivering excellent, patient-centred care through integrity, compassion, and teamwork. Get To Know Us</p>
+        <p className='md:text-start font-extralight text-black/70'>Neon Health Services is a cardiology-based specialist hospital with a strong focus on the diagnosis, treatment, and management of cardiovascular, vascular, and metabolic disorders. We are committed to delivering excellent, patient-centred care through integrity, compassion, and teamwork. <br /> PPCM is the most common heart disease of pregnancy and a leading cause of non-obstetric maternal mortality Which birthed the idea of NEON HEART FOUNDATION.</p>
 
 
-       <Link href={'/foundation'}>
+        <Link href={'/foundation'}>
           <button className='mt-5 px-8 py-3 bg-white text-[#1a7f7a] border-2 border-[#1a7f7a] rounded-lg font-semibold text-sm hover:bg-[#ECF9F7] hover:text-[#1a7f7a] cursor-pointer transition-all duration-300 shadow-md hover:shadow-lgr'>
-          Get To Know Us
-        </button>
-       </Link>
+            Get To Know Us
+          </button>
+        </Link>
 
-       </div>
+      </div>
 
       <div className='lg:pt-0'>
-        <CardiologyServices OnlyWhyNeonService/>
+        <CardiologyServices OnlyWhyNeonService />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

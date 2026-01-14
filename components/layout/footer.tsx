@@ -12,7 +12,7 @@ export default function Footer() {
             <p className="text-gray-300 mb-4 max-w-md leading-relaxed">
               Advanced cardiology and specialty care delivered with compassion and expertise.
             </p>
-     
+
             <p className="text-gray-300 mt-4 max-w-md leading-relaxed">
               Compassionate care, prompt response, and expert attention — always within reach.
             </p>
@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="mt-4">
               <span className="text-gray-300">Emergency Line: </span>
               <a href="tel:08036189199" className="text-teal-400 hover:text-teal-300 transition-colors font-semibold">
-                0803 618 9199
+                +234 915 081 7554
               </a>
             </div>
           </div>
@@ -59,16 +59,16 @@ export default function Footer() {
                 <Phone className="w-6 h-6 text-teal-400 flex-shrink-0 mt-1" />
                 <div>
                   <a href="tel:+2349150617554" className="block text-teal-400 hover:text-teal-300 transition-colors">
-                    +234 915 061 7554
+                    0915 081 7554
                   </a>
                   <a href="tel:+2348093387474" className="block text-teal-400 hover:text-teal-300 transition-colors">
-                    +234 809 338 7474
+                    +234 707 894 2676
                   </a>
                 </div>
               </div>
 
               {/* Social icons */}
-             
+
             </div>
           </div>
         </div>

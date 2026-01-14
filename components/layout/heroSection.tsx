@@ -69,14 +69,12 @@ export default function HeroSection() {
         style={{ backgroundColor: '#1a7f7a' }}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm justify-items-center">
             {/* General Line */}
             <div className="flex items-start gap-3">
               <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
               <div>
-                <div className="font-medium">General Line: 0915 081 7554</div>
-                <div className="opacity-90">Emergency (24/7): 0803 618 9189</div>
-                <div className="opacity-90">WhatsApp: 0915 081 7554 | 0808 338 7474</div>
+                <div className="opacity-90">Emergency (24/7) : 0915 061 7554 </div>
               </div>
             </div>
 

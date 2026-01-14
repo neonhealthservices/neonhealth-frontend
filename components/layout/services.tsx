@@ -13,39 +13,50 @@ interface CardiologyServiceProps {
 const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = false }: CardiologyServiceProps) => {
   const services = [
     {
-      image: "/images/chest-heart.png", 
+      image: "/images/chest-heart.png",
       alt: "Heart and stethoscope",
       title: "Heart Disease"
     },
     {
-      image: "/images/vascular.png", 
+      image: "/images/vascular.png",
       alt: "Blood pressure monitoring",
       title: "Vascular Disorder"
     },
     {
-      image: "/images/metabolic.png", 
+      image: "/images/metabolic.png",
       alt: "ECG cardiac monitor",
       title: "Metabolic Disorder"
     },
     {
-      image: "/images/holter.png", 
+      image: "/images/holter.png",
       alt: "Heart and stethoscope",
       title: "Holter ECG"
     },
     {
-      image: "/images/doppler.png", 
+      image: "/images/doppler.png",
       alt: "Blood pressure monitoring",
       title: "Doppler Ultrasonography"
     },
     {
-      image: "/images/Electroencephalogram.png", 
+      image: "/images/electro.png",
       alt: "ECG cardiac monitor",
-      title: "Electroencephalogram (EEG)"
+      title: "Electrocardiogram (ECG)"
+    },
+    {
+      image: "/images/pressure.png",
+      alt: "Blood pressure monitoring",
+      title: "Ambulatory Blood Pressure Monitoring"
+    },
+    {
+      image: "/images/echo.png",
+      alt: "Echocardiography",
+      title: "Echocardiography"
     }
+
   ];
 
   const moreServices = [
-     {
+    {
       image: "/images/physio.png",
       alt: "Physiotherapy",
       title: "Physiotherapy"
@@ -60,7 +71,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
       alt: "Nephrology",
       title: "Nephrology"
     },
-     {
+    {
       image: "/images/psych.png",
       alt: "Psychology",
       title: "Psychology"
@@ -146,49 +157,49 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
       <div className="max-w-6xl mx-auto">
         {!OnlyWhyNeonService && (
           <div>
-              {/* Cardiology Services Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Cardiology Services
-          </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Neon Health Services is a cardiology-based hospital with a special interest in the diagnosis
-            and management of heart, vascular, and metabolic disorders
-          </p>
-        </div>
-
-        {/* Services Cards */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="rounded-lg text-center"
-            >
-              <div className="flex justify-center mb-0">
-                <div className="relative w-84 h-64">
-                  <Image
-                    src={service.image}
-                    alt={service.alt}
-                    fill
-                    className="object-cover rounded-md"
-                  />
-                </div>
-              </div>
-              <p className="text-gray-700 text-base mb-3 mt-0.5 font-bold leading-relaxed">
-                {service.title}
+            {/* Cardiology Services Section */}
+            <div className="text-center mb-16">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Cardiology Services
+              </h1>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Neon Health Services is a cardiology-based hospital with a special interest in the diagnosis
+                and management of heart, vascular, and metabolic disorders
               </p>
             </div>
-          ))}
-        </div>
 
-        {/* See More Button */}
-       {!ShowMoreServices && (
-         <div className="text-center mb-20">
-          <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
-            See More
-          </Link>
-        </div>
-       )}
+            {/* Services Cards */}
+            <div className="grid md:grid-cols-3 gap-4 mb-12">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg text-center"
+                >
+                  <div className="flex justify-center mb-0">
+                    <div className="relative w-84 h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.alt}
+                        fill
+                        className="object-cover rounded-md"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-base mb-3 mt-0.5 font-bold leading-relaxed">
+                    {service.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* See More Button */}
+            {!ShowMoreServices && (
+              <div className="text-center mb-20">
+                <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
+                  See More
+                </Link>
+              </div>
+            )}
 
           </div>
         )}
@@ -232,32 +243,32 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
         {/* Why Neon Service Section */}
         {!ShowMoreServices && (
           <div className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Neon Services
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              We provide comprehensive cardiovascular care supported by adequate
-              investigative capacity to ensure accurate diagnosis and effective treatment.
-            </p>
-          </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Why Neon Services
+              </h2>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                We provide comprehensive cardiovascular care supported by adequate
+                investigative capacity to ensure accurate diagnosis and effective treatment.
+              </p>
+            </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="text-center"
-              >
-                <div className="bg-teal-50 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4 hover:bg-teal-100 transition-colors duration-300">
-                  {feature.icon}
+            {/* Features Grid */}
+            <div className="grid md:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="text-center"
+                >
+                  <div className="bg-teal-50 w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4 hover:bg-teal-100 transition-colors duration-300">
+                    {feature.icon}
+                  </div>
+                  <p className="text-gray-700 text-sm font-medium">
+                    {feature.title}
+                  </p>
                 </div>
-                <p className="text-gray-700 text-sm font-medium">
-                  {feature.title}
-                </p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
