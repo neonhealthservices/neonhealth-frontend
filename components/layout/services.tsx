@@ -51,7 +51,13 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
       image: "/images/echo.png",
       alt: "Echocardiography",
       title: "Echocardiography"
-    }
+    },
+    {
+      image: "/images/pacemaker.jpg",
+      alt: "Logistics for devices & Stenting",
+      title: "Logistics For Devices"
+    },
+
 
   ];
 

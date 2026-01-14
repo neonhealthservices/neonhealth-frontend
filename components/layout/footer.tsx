@@ -76,11 +76,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-teal-800 pt-6 mt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400">© 2025 Neon Health Services</p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-gray-400 hover:text-teal-300">Privacy</a>
-              <a href="#" className="text-gray-400 hover:text-teal-300">Terms</a>
-            </div>
+            <p className="text-gray-400">© 2026 Neon Health Services</p>
+
           </div>
         </div>
       </div>
