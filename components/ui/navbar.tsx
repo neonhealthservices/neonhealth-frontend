@@ -24,9 +24,9 @@ export default function Navbar() {
             <Image
               src="/neon-logo.png"
               alt="Neon Health Services Logo"
-              width={180}
-              height={180}
-              className="w-32 h-32 md:w-44 md:h-44"
+              width={250}
+              height={250}
+              className="w-40 h-40 md:w-56 md:h-56"
             />
           </div>
 
@@ -34,6 +34,7 @@ export default function Navbar() {
           <div className="hidden md:flex absolute left-1/2 top-1/3 transform -translate-x-1/2 items-center space-x-8">
             <Link href="/" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Home</Link>
             <Link href="/about" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">About Us</Link>
+            <Link href="/foundation" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Foundation</Link>
             <Link href="/services" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Services</Link>
             <Link href="/contact" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Contact Us</Link>
             <Link href="/blog" className="text-gray-700 hover:text-teal-600 transition-colors text-sm">Blog</Link>
@@ -73,6 +74,7 @@ export default function Navbar() {
               <div className="py-4 flex flex-col space-y-4">
                 <Link href="/" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Home</Link>
                 <Link href="/about" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">About Us</Link>
+                <Link href="/foundation" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Foundation</Link>
                 <Link href="/services" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Services</Link>
                 <Link href="/contact" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Contact Us</Link>
                 <Link href="/blog" className="text-gray-700 hover:text-teal-600 transition-colors py-2 text-sm">Blog</Link>

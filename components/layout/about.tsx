@@ -23,13 +23,16 @@ export default function AboutUs() {
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               About Us
             </h2>
-            
+
             <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                 Neon Health Services is a cardiology-based specialist hospital with a strong focus on the diagnosis, treatment, and management of cardiovascular, vascular, and metabolic disorders. We are committed to delivering excellent, patient-centred care through integrity, compassion, and teamwork. 
+                At Neon Health Services ,we provide our patients with advanced treatments and state-of-the-art therapies. Our team of highly trained professionals is committed to remaining at the forefront of medical progress by continually enhancing their skills and expertise to deliver exceptional care.
               </p>
-              
-              
+              <p>
+                Your health and well-being are our highest priorities, and we remain dedicated to delivering healthcare of the best quality.
+              </p>
+
+
             </div>
 
             <div className="pt-4">

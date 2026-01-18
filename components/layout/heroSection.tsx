@@ -35,19 +35,9 @@ export default function HeroSection() {
               className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
               style={{ color: '#1a7f7a' }}
             >
-              Leading Cardiovascular<br />Care for Healthier Lives
+              Leading expert Cardiovascular<br />care in Nigeria
             </motion.h1>
 
-            {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-gray-700 text-base lg:text-lg mb-8 leading-relaxed"
-            >
-              Advanced cardiovascular care delivered with integrity, compassion, and expertise<br />
-              — supported by a multidisciplinary medical team and modern technology.
-            </motion.p>
 
             {/* CTA Button */}
             <motion.div

@@ -22,7 +22,7 @@ function page() {
       <AboutSection />
 
       <div className='text-center space-y-6 md:max-w-5xl md:mx-auto mt-16 mb-20'>
-        <h1 className='text-3xl font-bold '>Introducing Neon Heath Foundation</h1>
+        <h1 className='text-3xl font-bold '>Introducing Neon Heart Foundation</h1>
         <p className='md:text-start font-extralight text-black/70'>Neon Health Services is a cardiology-based specialist hospital with a strong focus on the diagnosis, treatment, and management of cardiovascular, vascular, and metabolic disorders. We are committed to delivering excellent, patient-centred care through integrity, compassion, and teamwork. <br /> PPCM is the most common heart disease of pregnancy and a leading cause of non-obstetric maternal mortality Which birthed the idea of NEON HEART FOUNDATION.</p>
 
 
