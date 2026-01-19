@@ -74,7 +74,7 @@ export default function ContactForm() {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 mt-1" />
                 <p>
-                  Plot 132 G Lane, Ewet Housing Estate,<br />
+                  Plot 132 A Line, Ewet Housing Estate,<br />
                   Uyo, Akwa Ibom State
                 </p>
               </div>
