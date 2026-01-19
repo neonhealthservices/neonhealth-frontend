@@ -92,7 +92,7 @@ export default function HeroSection() {
               <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="font-medium">Location:</div>
-                <div className="opacity-90">Plot 132 A Lane, Ewet Housing Estate,</div>
+                <div className="opacity-90">Plot 132 A Line, Ewet Housing Estate,</div>
                 <div className="opacity-90">Uyo, Akwa Ibom State</div>
               </div>
             </div>

@@ -43,7 +43,7 @@ export default function BlogPostPage() {
     return (
         <>
             <Navbar />
-            <div className="bg-white min-h-screen">
+            <div className="bg-white min-h-screen pt-14">
                 {loading ? (
                     <div className="flex justify-center items-center h-screen">
                         <LoadingSpinner size="lg" color="teal" />
