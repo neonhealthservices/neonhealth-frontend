@@ -10,10 +10,10 @@ function page() {
 
       {/* Hero Section */}
       <div className="relative w-full h-152 bg-cover  bg-center" style={{ backgroundImage: `url('/images/checkup2.png')` }}>
-        <div className="absolute inset-0 bg-black/55"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
-          <h1 className="text-5xl font-bold mb-4 text-center">Our Services</h1>
-          <p className="text-xl max-w-2xl text-center">Specialist Care Designed Around Your Health</p>
+        <div className="absolute inset-0 bg-black/45"></div>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
+          <h1 className="text-5xl font-bold mb-4 text-center" style={{ color: '#1a7f7a' }}>Our Services</h1>
+          <p className="text-xl max-w-2xl text-center" style={{ color: '#1a7f7a' }}>Specialist Care Designed Around Your Health</p>
         </div>
       </div>
 
