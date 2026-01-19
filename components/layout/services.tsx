@@ -134,7 +134,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
     {
       image: "/images/pacemaker.jpg",
       alt: "Logistics for devices & Stenting",
-      title: "Logistics For Devices"
+      title: "Logistics For Devices & Stenting"
     },
 
 
@@ -143,7 +143,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
   const features = [
     {
       icon: <Heart className="w-12 h-12 text-teal-600" />,
-      title: "Specialized cardiology expertise"
+      title: "Specialized consultations"
     },
     {
       icon: <Ambulance className="w-12 h-12 text-teal-600" />,

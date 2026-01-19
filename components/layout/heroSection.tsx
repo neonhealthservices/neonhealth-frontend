@@ -35,7 +35,7 @@ export default function HeroSection() {
               className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
               style={{ color: '#1a7f7a' }}
             >
-              Leading expert Cardiovascular<br />care in Nigeria
+              Leading Expert Cardiovascular<br />Care in Nigeria
             </motion.h1>
 
 
