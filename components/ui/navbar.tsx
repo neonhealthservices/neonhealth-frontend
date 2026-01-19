@@ -44,7 +44,7 @@ export default function Navbar() {
           {/* Logo Container */}
           <div className="w-40 md:w-56 flex-shrink-0 relative">
             <Link href="/" className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-2 md:-ml-4">
-              <div className="relative h-32 w-40 md:h-42 md:w-42 transition-all duration-300">
+              <div className="relative h-32 w-40 md:h-52 md:w-52 transition-all duration-300">
                 <Image
                   src="/neon-logo.png"
                   alt="Neon Health Services Logo"

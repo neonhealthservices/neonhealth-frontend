@@ -41,7 +41,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-teal-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-gray-300">Plot 132 G Lane, Ewet Housing Estate,</p>
+                  <p className="text-gray-300">Plot 132 A Lane, Ewet Housing Estate,</p>
                   <p className="text-gray-300">Uyo, Akwa Ibom State</p>
                 </div>
               </div>

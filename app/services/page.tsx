@@ -6,11 +6,11 @@ import React from 'react'
 function page() {
   return (
     <div>
-      <Navbar/>
-     
+      <Navbar />
+
       {/* Hero Section */}
-      <div className="relative w-full h-152 bg-cover  bg-center" style={{backgroundImage: `url('/images/checkup2.png')`}}>
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="relative w-full h-152 bg-cover  bg-center" style={{ backgroundImage: `url('/images/checkup2.png')` }}>
+        <div className="absolute inset-0 bg-black/55"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
           <h1 className="text-5xl font-bold mb-4 text-center">Our Services</h1>
           <p className="text-xl max-w-2xl text-center">Specialist Care Designed Around Your Health</p>
@@ -22,16 +22,16 @@ function page() {
         <h2 className='text-4xl font-bold mb-4'>Services</h2>
         <p>
           Neon Health Services is a cardiology-based specialist hospital offering comprehensive care for heart, vascular, and metabolic conditions. Our services are delivered by experienced specialists and supported by advanced diagnostic capabilities to ensure accurate evaluation, effective treatment, and quality outcomes.
-           We also provide logistics support for interventional procedures such as cardiac stenting and pacing, alongside a range of specialist medical services designed to meet diverse healthcare needs.
-         </p>
+          We also provide logistics support for interventional procedures such as cardiac stenting and pacing, alongside a range of specialist medical services designed to meet diverse healthcare needs.
+        </p>
       </div>
 
-       
+
       <div className='lg:pt-0'>
-        <CardiologyServices ShowMoreServices/>
+        <CardiologyServices ShowMoreServices />
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   )
 }
