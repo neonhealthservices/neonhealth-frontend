@@ -91,11 +91,11 @@ export default function ContactForm() {
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 mt-1" />
                 <div>
-                  <a href="tel:+2349150617554" className="block hover:underline">
-                    +234 915 061 7554
+                  <a href="tel:+2349150817554" className="block hover:underline">
+                    0915 081 7554
                   </a>
-                  <a href="tel:+2348093387474" className="block hover:underline">
-                    +234 809 338 7474
+                  <a href="tel:+2347078942676" className="block hover:underline">
+                    +234 707 894 2676
                   </a>
                 </div>
               </div>
@@ -104,8 +104,8 @@ export default function ContactForm() {
               <div className="pt-4 border-t border-teal-500">
                 <p className="font-semibold">
                   Emergency:{' '}
-                  <a href="tel:+2348036189199" className="hover:underline">
-                    +234 0803 618 9199
+                  <a href="tel:+2349150817554" className="hover:underline">
+                    0915 081 7554
                   </a>
                 </p>
               </div>
