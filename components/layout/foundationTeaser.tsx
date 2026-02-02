@@ -44,9 +44,7 @@ export default function FoundationTeaser() {
                         transition={{ delay: 0.2 }}
                         className="max-w-2xl mb-12"
                     >
-                        <p className="text-3xl md:text-5xl font-black italic text-teal-400 mb-8 leading-tight">
-                            "You are in <br /> Good Hands"
-                        </p>
+
                         <p className="text-lg md:text-xl text-teal-50/80 leading-relaxed font-light">
                             At Neon Heart Foundation, we are dedicated to saving lives through early detection and treatment of Peripartum Cardiomyopathy (PPCM). Our mission is to reduce maternal mortality and ensure that every mother gets the help she needs.
                         </p>
