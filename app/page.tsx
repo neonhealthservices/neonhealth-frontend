@@ -16,8 +16,8 @@ export default function Home() {
       <AboutUs />
       <CardiologyServices />
       <CoreValues />
-      <LatestBlogs />
       <FoundationTeaser />
+      <LatestBlogs />
       <ContactForm />
       <Footer />
     </div>
