@@ -5,7 +5,8 @@ import HeroSection from "@/components/layout/heroSection";
 import CardiologyServices from "@/components/layout/services";
 import LatestBlogs from "@/components/layout/LatestBlogs";
 import Navbar from "@/components/ui/navbar";
-import Image from "next/image";
+import CoreValues from "@/components/layout/coreValues";
+import FoundationTeaser from "@/components/layout/foundationTeaser";
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <CardiologyServices />
+      <CoreValues />
       <LatestBlogs />
+      <FoundationTeaser />
       <ContactForm />
       <Footer />
     </div>

@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="mt-4">
               <span className="text-gray-300">Emergency Line: </span>
               <a href="tel:08036189199" className="text-teal-400 hover:text-teal-300 transition-colors font-semibold">
-                +234 915 081 7554
+                +234 915 061 7554
               </a>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function Footer() {
                 <Phone className="w-6 h-6 text-teal-400 flex-shrink-0 mt-1" />
                 <div>
                   <a href="tel:+2349150617554" className="block text-teal-400 hover:text-teal-300 transition-colors">
-                    0915 081 7554
+                    0915 061 7554
                   </a>
                   <a href="tel:+2348093387474" className="block text-teal-400 hover:text-teal-300 transition-colors">
                     +234 707 894 2676

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Geom } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geom = Geom({
-  variable: "--font-geom",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geom.variable} antialiased`}
+        className={`${plusJakartaSans.variable} antialiased`}
       >
         {children}
       </body>

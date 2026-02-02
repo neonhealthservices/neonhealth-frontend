@@ -20,19 +20,23 @@ export default function AboutUs() {
 
           {/* Content Section */}
           <div className="w-full space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              About Us
-            </h2>
+            <div className="space-y-4">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                World Class Healthcare, <br />
+                <span className="text-[#1a7f7a]">Right Here at Home.</span>
+              </h2>
+              <p className="text-gray-500 font-medium text-lg uppercase tracking-widest">
+                Get to know us
+              </p>
+            </div>
 
             <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                At Neon Health Services, we provide our patients with advanced treatments and state-of-the-art therapies. Our team of highly trained professionals is committed to remaining at the forefront of medical progress by continually enhancing their skills and expertise to deliver exceptional care.
+                Neon health services arose from a desire to meet the unique health needs of the public. Founded in 2020, we have since expanded to become the leading private specialist hospital in the state.
               </p>
               <p>
-                Your health and well-being are our highest priorities, and we remain dedicated to delivering healthcare of the best quality.
+                We are revolutionizing private health care in Nigeria with sophisticated medical technology, ethical practice, and outstanding patient experience.
               </p>
-
-
             </div>
 
             <div className="pt-4">

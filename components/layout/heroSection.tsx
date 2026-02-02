@@ -7,96 +7,63 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Hero Section */}
-      <div className="relative h-full flex items-center">
-        {/* Background Image - static for performance, or subtle scale */}
-        <div className="absolute inset-0">
-          <motion.img
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            src="/images/man-in-suit.png"
-            alt="Healthcare Professional"
-            className="w-full h-full object-contain object-right"
-          />
-          {/* Gradient Overlay - stronger on left, fading to right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#ECF9F7] via-[#ECF9F7] to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full max-sm:pb-32">
-          <div className="max-w-2xl">
-            {/* Main Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
-              style={{ color: '#1a7f7a' }}
-            >
-              Leading Expert Cardiovascular<br />Care in Nigeria
-            </motion.h1>
-
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300 inline-block">
-                Explore Our Services
-              </Link>
-            </motion.div>
-          </div>
-        </div>
+    <div className="relative w-full min-h-screen overflow-hidden flex items-center pt-48 pb-20">
+      {/* Background Image - Moved to cover entire parent */}
+      <div className="absolute inset-0">
+        <motion.img
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          src="/images/man-in-suit.png"
+          alt="Healthcare Professional"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark Full Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      {/* Bottom Contact Bar */}
-      <div
-        className="absolute bottom-0 left-0 right-0 text-white py-4 px-6"
-        style={{ backgroundColor: '#1a7f7a' }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm lg:justify-items-center">
-            {/* General Line */}
-            <div className="flex items-start gap-3">
-              <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <div className="space-y-1">
-                <div className="flex items-start gap-2">
-                  <span className="min-w-[85px] font-medium text-teal-100/90">Whatsapp:</span>
-                  <span className="opacity-90">0915 081 7554</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="min-w-[85px] font-medium text-teal-100/90">General:</span>
-                  <span className="opacity-90">0915 081 7554, +234 707 894 2676</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="min-w-[85px] font-medium text-teal-100/90">Emergency:</span>
-                  <span className="opacity-90">0915 081 7554 <span className="text-xs text-teal-200 ml-1">(24/7)</span></span>
-                </div>
-              </div>
-            </div>
+      {/* Hero Section Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-24 w-full">
+        <div className="max-w-4xl">
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl lg:text-5xl xl:text-7xl font-bold uppercase mb-8 tracking-tight text-white"
+          >
+            <span className="block mb-2">Welcome To</span>
+            NEON HEALTH SERVICES
+          </motion.h1>
 
-            {/* Email */}
-            <div className="flex items-start gap-3">
-              <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="font-medium">Email: neonhealthservices@gmail.com</div>
-              </div>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-6 mb-12 text-gray-100 leading-relaxed text-lg lg:text-xl font-light max-w-3xl"
+          >
+            <p>
+              At Neon Health Services, we provide our patients with advanced treatments and state-of-the-art therapies. We are committed to delivering the best medical care to all our clients at every point in time.
+            </p>
+            <p>
+              Our team of highly trained professionals are committed to remaining at the forefront of medical progress by continually enhancing their skills and expertise to deliver exceptional care.
+            </p>
+            <p>
+              Your health and well-being are our highest priorities, and we remain dedicated to delivering healthcare of the best quality.
+            </p>
 
-            {/* Location */}
-            <div className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="font-medium">Location:</div>
-                <div className="opacity-90">Plot 132 A Line, Ewet Housing Estate,</div>
-                <div className="opacity-90">Uyo, Akwa Ibom State</div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <Link href="/services" className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 inline-block shadow-lg hover:shadow-teal-900/40">
+              Explore Our Services
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>
