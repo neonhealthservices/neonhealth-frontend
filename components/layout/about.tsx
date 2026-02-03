@@ -10,7 +10,7 @@ export default function AboutUs() {
           <div className="w-full">
             <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
               <img
-                src="/images/hospital-hall.jpg"
+                src="/images/about.jpg"
                 alt="Hospital corridor with medical equipment"
                 className="w-full h-full object-cover"
               />
