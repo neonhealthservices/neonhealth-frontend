@@ -96,7 +96,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative text-[10px] lg:text-xs font-black uppercase tracking-[0.25em] transition-all duration-300 ${isActive ? 'text-teal-600' : 'text-gray-900 hover:text-teal-600'
+                    className={`relative text-[10px] lg:text-base  transition-all duration-300 ${isActive ? 'text-teal-600' : 'text-gray-900 hover:text-teal-600'
                       }`}
                   >
                     {link.name}

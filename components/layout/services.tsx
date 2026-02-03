@@ -12,9 +12,14 @@ import { motion } from 'framer-motion';
 interface CardiologyServiceProps {
   OnlyWhyNeonService?: boolean;
   ShowMoreServices?: boolean;
+  hideCards?: boolean;
 }
 
-const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = false }: CardiologyServiceProps) => {
+const CardiologyServices = ({
+  OnlyWhyNeonService = false,
+  ShowMoreServices = false,
+  hideCards = false
+}: CardiologyServiceProps) => {
   const services = [
     {
       image: "/images/chest-heart.png",
@@ -59,22 +64,22 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
   ];
 
   return (
-    <section className={`relative min-h-screen bg-gradient-to-br from-teal-900 to-teal-950 text-white ${!OnlyWhyNeonService ? 'pt-48 pb-24' : 'py-12'}`}>
+    <section className={`relative ${hideCards ? 'py-14' : !OnlyWhyNeonService ? 'pt-48 pb-24' : 'py-12'} bg-gradient-to-br from-teal-900 to-teal-950 text-white`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 lg:items-start">
+        <div className={`flex flex-col ${hideCards ? 'items-center text-center' : 'lg:flex-row lg:items-start'} gap-16`}>
 
-          {/* Left Column: Sticky Context */}
-          <div className="lg:w-1/3 lg:sticky lg:top-32 space-y-8">
+          {/* Left Column: Context */}
+          <div className={`${hideCards ? 'max-w-3xl' : 'lg:w-1/3 lg:sticky lg:top-32'} space-y-8`}>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: hideCards ? 0 : -20, y: hideCards ? 20 : 0 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-2 text-teal-300 font-bold uppercase tracking-widest text-sm mb-4">
+              <div className={`flex items-center ${hideCards ? 'justify-center' : ''} gap-2 text-teal-300 font-bold uppercase tracking-widest text-sm mb-4`}>
                 <Activity className="w-5 h-5" />
                 <span>Specialized Care</span>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-3xl font-black leading-tight mb-6 text-white uppercase tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-5xl font-black leading-tight mb-6 text-white tracking-tight">
                 Our Services
               </h2>
               <p className="text-teal-50/80 text-lg leading-relaxed mb-8">
@@ -86,7 +91,7 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
                   href="/services"
                   className="inline-flex items-center gap-3 bg-white text-teal-900 font-bold px-8 py-4 rounded-full hover:bg-teal-50 transition-all duration-300 group"
                 >
-                  <span>SEE OUR SERVICES</span>
+                  <span>SEE ALL OUR SERVICES</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               )}
@@ -94,39 +99,41 @@ const CardiologyServices = ({ OnlyWhyNeonService = false, ShowMoreServices = fal
           </div>
 
           {/* Right Column: Scrollable Services */}
-          <div className="lg:w-2/3 space-y-12">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index % 3 * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="group grid md:grid-cols-2 gap-8 bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-[2.5rem] hover:bg-white/10 transition-all duration-500 overflow-hidden"
-              >
-                <div className="relative h-64 md:h-auto rounded-2xl overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-                <div className="flex flex-col justify-center py-4">
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-teal-300 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-teal-50/70 leading-relaxed text-base lg:text-lg">
-                    {service.desc}
-                  </p>
-                  <div className="mt-6 flex items-center gap-2 text-teal-400 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span>Clinical Detail</span>
-                    <ArrowRight className="w-4 h-4" />
+          {!hideCards && (
+            <div className="lg:w-2/3 space-y-12">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index % 3 * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="group grid md:grid-cols-2 gap-8 bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-[2.5rem] hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                >
+                  <div className="relative h-64 md:h-auto rounded-2xl overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="flex flex-col justify-center py-4">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-teal-300 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-teal-50/70 leading-relaxed text-base lg:text-lg">
+                      {service.desc}
+                    </p>
+                    <div className="mt-6 flex items-center gap-2 text-teal-400 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>Clinical Detail</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
 
         </div>
       </div>

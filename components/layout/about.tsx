@@ -25,19 +25,10 @@ export default function AboutUs() {
                 World Class Healthcare, <br />
                 <span className="text-[#1a7f7a]">Right Here at Home.</span>
               </h2>
-              <p className="text-gray-500 font-medium text-lg uppercase tracking-widest">
-                Get to know us
-              </p>
+
             </div>
 
-            <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
-              <p>
-                Neon health services arose from a desire to meet the unique health needs of the public. Founded in 2020, we have since expanded to become the leading private specialist hospital in the state.
-              </p>
-              <p>
-                We are revolutionizing private health care in Nigeria with sophisticated medical technology, ethical practice, and outstanding patient experience.
-              </p>
-            </div>
+
 
             <div className="pt-4">
               <Link href="/about" className="px-8 py-3 bg-white text-[#1a7f7a] border-2 border-[#1a7f7a] rounded-lg font-semibold text-lg hover:bg-[#ECF9F7] hover:text-[#1a7f7a] cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg">
