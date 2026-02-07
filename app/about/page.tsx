@@ -17,18 +17,18 @@ function page() {
       {/* --- HERO SECTION --- */}
       <div className="relative h-[680px] w-full overflow-hidden flex items-center">
         <Image
-          src="/images/about-hero.jpg"
+          src="/images/reception.png"
           alt="Hospital Reception"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-emerald-900/55" />
+        <div className="absolute inset-0 bg-emerald-950/75" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-20">
           <div className="max-w-4xl space-y-8 lg:pt-10">
-            <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter">
-              About Neon Health Services
+            <h1 className="text-4xl md:text-5xl font-black uppercase text-white leading-[1.1] tracking-tighter">
+              About Neon
             </h1>
             <p className="text-lg lg:text-xl text-emerald-50 leading-relaxed font-semibold max-w-4xl">
               Neon health services arose from a desire to meet the unique health needs of the public. <br />
