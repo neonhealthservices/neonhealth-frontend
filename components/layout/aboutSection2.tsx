@@ -14,8 +14,8 @@ export default function AboutSection({ variant = 'default' }: AboutSectionProps)
     // Keep foundation variant simple or as it was if possible
     return (
       <div className="max-w-7xl mx-auto px-4 py-24 text-gray-800">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
-          <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl">
+        <div className="grid md:grid-cols-2 gap-12 items-start mb-24">
+          <div className="relative h-[450px] w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-xl">
             <Image
               src="/images/pregnant-2.jpg"
               alt="Neon Heart Foundation"
@@ -23,12 +23,11 @@ export default function AboutSection({ variant = 'default' }: AboutSectionProps)
               className="object-cover"
             />
           </div>
-          <div className="space-y-8">
-            <h2 className="text-5xl font-black text-[#0a4d4a] uppercase tracking-tight">Neon Heart <br /><span className="text-teal-600">Foundation</span></h2>
+          <div className="space-y-8 pt-4">
             <p className="text-xl text-gray-700 leading-relaxed font-light">
               We are building a sanctuary for maternal health. The Neon Heart Foundation is a non-profit movement dedicated to eradicating the silent threat of PPCM.
             </p>
-            <p className="italic text-gray-600 border-l-4 border-teal-500 pl-6">
+            <p className="italic text-gray-600 border-l-4 border-teal-500 pl-6 text-lg">
               "Our mission is simple yet vital: No mother should lose her life while bringing life."
             </p>
           </div>
