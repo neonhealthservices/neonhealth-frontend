@@ -77,10 +77,10 @@ const CardiologyServices = ({
               <Activity className="w-4 h-4" />
               <span>Medical Excellence</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-black leading-tight text-gray-900 tracking-tight">
               Our Clinical <span className="text-teal-600">Specialties</span>
             </h2>
-            <p className="mt-6 text-gray-600 text-lg leading-relaxed font-light">
+            <p className="mt-4 text-gray-600 text-base leading-relaxed font-normal">
               Beyond our recognized expertise in cardiology, we provide a multidisciplinary approach to healthcare, integrating advanced technology with compassionate medical practice.
             </p>
           </motion.div>
