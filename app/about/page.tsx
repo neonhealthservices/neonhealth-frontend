@@ -27,15 +27,15 @@ function page() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-20">
           <div className="max-w-4xl space-y-8 lg:pt-10">
-            <h1 className="text-3xl md:text-4xl font-black uppercase text-white leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white leading-tight tracking-tight">
               About Neon
             </h1>
-            <p className="text-base md:text-lg text-emerald-50 leading-relaxed font-medium max-w-3xl">
+            <p className="text-lg md:text-xl text-emerald-50 leading-relaxed font-medium max-w-3xl">
               Neon health services arose from a desire to meet the unique health needs of the public. <br />
               Founded in 2020, we have since expanded to become the leading private specialist hospital in the state.
             </p>
 
-            <p className='text-base md:text-lg text-emerald-50 leading-relaxed font-medium max-w-4xl'>
+            <p className='text-lg md:text-xl text-emerald-50 leading-relaxed font-medium max-w-4xl'>
               We are revolutionizing private health care in Nigeria with sophisticated medical technology, ethical practice, and outstanding patient experience.
             </p>
           </div>
@@ -86,9 +86,7 @@ function page() {
         </div>
       </div>
 
-      <div className='lg:pt-0'>
-        <CardiologyServices OnlyWhyNeonService />
-      </div>
+
       <Footer />
     </div>
   )

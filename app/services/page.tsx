@@ -16,89 +16,75 @@ function page() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative w-full h-[600px] overflow-hidden">
+      <div className="relative h-[680px] w-full overflow-hidden flex items-center">
         <Image
           src='/images/checkup2.png'
           alt='Neon Health Services'
           fill
           className="object-cover"
+          priority
         />
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-white">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-8xl font-black mb-6 text-center uppercase tracking-tighter"
-          >
-            Our <span className="text-teal-400">Services</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl text-center font-light leading-relaxed"
-          >
-            Comprehensive, patient-centered medical care delivered to international standards.
-          </motion.p>
+        <div className="absolute inset-0 bg-emerald-950/75" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-20">
+          <div className="max-w-4xl space-y-8 lg:pt-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white leading-tight tracking-tight">
+              Our Services
+            </h1>
+            <p className="text-lg md:text-xl text-emerald-50 leading-relaxed font-medium max-w-3xl">
+              At Neon Health Services, we provide comprehensive, patient-centered medical care delivered to International Standards.
+            </p>
+
+            <p className='text-lg md:text-xl text-emerald-50 leading-relaxed font-medium max-w-4xl'>
+              We also provide logistics support for Interventional Procedures Such as Cardiac Stenting and pacing, alongside a range of specialist medical services.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Intro Description */}
-      <div className='bg-white text-gray-800 py-24 px-6'>
-        <div className="max-w-5xl mx-auto text-center space-y-10">
-          <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-xs">
-            <Activity className="w-4 h-4" />
-            <span>Healthcare Excellence</span>
-          </div>
-          <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-700">
-            At <span className="font-bold text-[#0a4d4a]">Neon Health Services</span>, we provide comprehensive, patient-centered medical care delivered to International Standards. We also provide logistics support for Interventional Procedures Such as Cardiac Stenting and pacing, alongside a range of specialist medical services designed to meet diverse healthcare needs.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600">
-                <Heart className="w-8 h-8" />
-              </div>
-              <h3 className="font-black text-sm uppercase">Cardiology</h3>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
-                <Activity className="w-8 h-8" />
-              </div>
-              <h3 className="font-black text-sm uppercase">Diagnostics</h3>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600">
-                <ShieldCheck className="w-8 h-8" />
-              </div>
-              <h3 className="font-black text-sm uppercase">Specialist Care</h3>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600">
-                <Microscope className="w-8 h-8" />
-              </div>
-              <h3 className="font-black text-sm uppercase">Blood Tests</h3>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
 
       <CardiologyServices ShowMoreServices />
 
       {/* Collaboration Section */}
-      <div className="py-24 bg-[#0a4d4a] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl" />
+      <div className="py-24 bg-[#f0fdfc] text-[#0a4d4a] relative border-y border-teal-50">
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-12 leading-tight">
-            In Collaboration with <span className="text-teal-400">Other Facilities</span> <br />
-            Within and Outside the Country
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center gap-12 items-center">
-            <div className="bg-white/5 border border-white/10 px-12 py-8 rounded-[2rem] hover:bg-white/10 transition-all">
-              <h3 className="text-2xl font-bold uppercase tracking-widest">Interventional Cardiology</h3>
+          <div className="space-y-4 mb-16">
+            <h2 className="text-3xl md:text-5xl font-black leading-tight uppercase tracking-tight">
+              In Collaboration with <br />
+              <span className="text-teal-600">Other Facilities</span>
+            </h2>
+            <div className="inline-flex items-center gap-4">
+              <div className="h-[1px] w-8 bg-teal-400" />
+              <p className="text-sm md:text-base text-teal-700 font-bold uppercase tracking-[0.3em]">
+                Within and Outside the Country
+              </p>
+              <div className="h-[1px] w-8 bg-teal-400" />
             </div>
-            <div className="bg-white/5 border border-white/10 px-12 py-8 rounded-[2rem] hover:bg-white/10 transition-all">
-              <h3 className="text-2xl font-bold uppercase tracking-widest">Electrophysiology & Pacing</h3>
-            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-teal-100 flex items-center justify-center group hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-500"
+            >
+              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-center leading-tight">
+                Interventional <br />
+                <span className="text-teal-600">Cardiology</span>
+              </h3>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-teal-100 flex items-center justify-center group hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-500"
+            >
+              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-center leading-tight">
+                Electrophysiology <br />
+                <span className="text-teal-600"> & Pacing</span>
+              </h3>
+            </motion.div>
           </div>
         </div>
       </div>

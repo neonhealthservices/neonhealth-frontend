@@ -64,23 +64,23 @@ const CardiologyServices = ({
   ];
 
   return (
-    <section className={`relative ${hideCards ? 'py-14' : 'py-24 md:py-32'} bg-white overflow-hidden`}>
+    <section className={`relative ${hideCards ? 'py-14' : 'pt-16 pb-24 md:pt-20 md:pb-32'} bg-white overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col items-center justify-center gap-6 mb-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="max-w-4xl flex flex-col items-center"
           >
             <div className="flex items-center gap-2 text-teal-600 font-bold uppercase tracking-widest text-xs mb-4">
               <Activity className="w-4 h-4" />
               <span>Medical Excellence</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black leading-tight text-gray-900 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 tracking-tight text-center">
               Our Clinical <span className="text-teal-600">Specialties</span>
             </h2>
-            <p className="mt-4 text-gray-600 text-base leading-relaxed font-normal">
+            <p className="mt-6 text-gray-600 text-lg md:text-xl leading-relaxed font-normal text-center">
               Beyond our recognized expertise in cardiology, we provide a multidisciplinary approach to healthcare, integrating advanced technology with compassionate medical practice.
             </p>
           </motion.div>

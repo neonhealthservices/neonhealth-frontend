@@ -3,37 +3,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import {
-    Stethoscope,
-    Activity,
-    Thermometer,
-    Users,
-    BriefcaseMedical,
-    Baby,
-    Heart,
-    Eye,
-    Microscope,
-    Scissors
-} from 'lucide-react';
+import { } from 'lucide-react'; // Removing unused imports
 
 const otherServices = [
-    { title: "GENERAL INTERNAL MEDICINE", image: "/images/internal.jpg", icon: <Stethoscope size={18} /> },
-    { title: "EMERGENCY MEDICINE", image: "/images/emergency.jpg", icon: <BriefcaseMedical size={18} /> },
-    { title: "ENDOCRINOLOGY", image: "/images/endocrine.jpg", icon: <Activity size={18} /> },
-    { title: "PULMONOLOGY", image: "/images/pulmonology.jpg", icon: <Thermometer size={18} /> },
-    { title: "NEPHROLOGY", image: "/images/nephrology.jpg", icon: <Activity size={18} /> },
-    { title: "NEUROLOGY", image: "/images/neurology.jpg", icon: <Activity size={18} /> },
-    { title: "DERMATOLOGY", image: "/images/derma.jpg", icon: <Activity size={18} /> },
-    { title: "HEMATOLOGY", image: "/images/hematology.jpg", icon: <Microscope size={18} /> },
-    { title: "MENTAL HEALTH", image: "/images/mental.jpg", icon: <Users size={18} /> },
-    { title: "PAEDIATRICS", image: "/images/pediatrics.jpg", icon: <Baby size={18} /> },
-    { title: "OBSTETRICS AND GYNECOLOGY", image: "/images/obs.jpg", icon: <Baby size={18} /> },
-    { title: "GENERAL SURGERY", image: "/images/surgery.jpg", icon: <Scissors size={18} /> },
-    { title: "UROLOGY", image: "/images/urology.jpg", icon: <Activity size={18} /> },
-    { title: "PHYSIOTHERAPY", image: "/images/physio.jpg", icon: <Activity size={18} /> },
-    { title: "SONOGRAPHY", image: "/images/sonography.jpg", icon: <Activity size={18} /> },
-    { title: "OTORHINOLARYNGOLOGY (ENT)", image: "/images/ent.jpg", icon: <Activity size={18} /> },
-    { title: "OVER 1000 BLOOD TESTS", image: "/images/lab.jpg", icon: <Microscope size={18} /> },
+    { title: "GENERAL INTERNAL MEDICINE", image: "/images/checkup.png" },
+    { title: "EMERGENCY MEDICINE", image: "/images/reception.png" },
+    { title: "ENDOCRINOLOGY", image: "/images/metabolic.png" },
+    { title: "PULMONOLOGY", image: "/images/lungs.jpg" },
+    { title: "NEPHROLOGY", image: "/images/nephro.png" },
+    { title: "NEUROLOGY", image: "/images/brain.jpg" },
+    { title: "DERMATOLOGY", image: "/images/lady.png" },
+    { title: "HEMATOLOGY", image: "/images/blood-test.png" },
+    { title: "MENTAL HEALTH", image: "/images/hospital-hall.jpg" },
+    { title: "PAEDIATRICS", image: "/images/baby.jpg" },
+    { title: "OBSTETRICS AND GYNECOLOGY", image: "/images/pregnant.jpg" },
+    { title: "GENERAL SURGERY", image: "/images/general-surgery.jpg" },
+    { title: "UROLOGY", image: "/images/kidney.jpg" },
+    { title: "PHYSIOTHERAPY", image: "/images/physio.png" },
+    { title: "SONOGRAPHY", image: "/images/ultra-sound.png" },
+    { title: "OTORHINOLARYNGOLOGY (ENT)", image: "/images/throat.png" },
+    { title: "OVER 1000 BLOOD TESTS", image: "/images/tests.png" },
 ];
 
 export default function SpecializedServices() {
@@ -61,13 +50,10 @@ export default function SpecializedServices() {
                                 src={service.image}
                                 alt={service.title}
                                 fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
                             />
                             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-teal-900 via-teal-900/40 to-transparent p-6">
                                 <div className="flex items-center gap-3 text-white">
-                                    <div className="p-2 bg-teal-500 rounded-lg text-white">
-                                        {service.icon}
-                                    </div>
                                     <h3 className="font-bold text-sm uppercase tracking-tight leading-snug">{service.title}</h3>
                                 </div>
                             </div>
