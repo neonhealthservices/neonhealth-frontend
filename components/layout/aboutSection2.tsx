@@ -112,51 +112,28 @@ export default function AboutSection({ variant = 'default' }: AboutSectionProps)
         </motion.div>
       </div>
 
-      {/* --- Mission and Vision Header --- */}
-      <div className="max-w-6xl mx-auto px-4 mb-12">
-        <p className="text-sm mb-1 text-teal-600 font-bold uppercase tracking-wider">Our Mission and Vision</p>
-        <p className="text-xl md:text-2xl text-gray-800 font-bold leading-snug">
-          We provide excellent, patient-centered care through a multidisciplinary team of 100% specialist consultants, ensuring accurate diagnosis and superior health outcomes.
+      {/* --- Mission Section --- */}
+      <div className="max-w-6xl mx-auto px-4 mb-20">
+        <p className="text-sm mb-2 text-teal-600 font-bold uppercase tracking-wider">Our Mission</p>
+        <p className="text-xl md:text-3xl lg:text-4xl text-gray-800 font-bold leading-snug">
+          To provide accessible, world-class healthcare with a strong focus on cardiovascular excellence, driven by innovation, ethical medical practice, and compassionate care.
         </p>
       </div>
 
-      {/* --- Mission, Vision, Quality Grid --- */}
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pb-16">
-        {/* Mission Card */}
-        <motion.div
-          whileHover={{ y: -10 }}
-          className="group relative bg-[#f0fdfc] rounded-t-[2rem] rounded-b-none transition-all duration-500 border-b-[5px] border-teal-500 flex flex-col h-full overflow-hidden"
-        >
-          <div className="px-5 pt-12 pb-10 space-y-6 flex-grow">
-            <p className="text-gray-700 leading-relaxed font-semibold text-sm">
-              To provide accessible, world-class healthcare with a strong focus on cardiovascular excellence, driven by innovation, ethical medical practice, and compassionate care.
-            </p>
-          </div>
-        </motion.div>
+      {/* --- Vision Section --- */}
+      <div className="max-w-6xl mx-auto px-4 mb-20">
+        <p className="text-sm mb-2 text-teal-600 font-bold uppercase tracking-wider">Our Vision</p>
+        <p className="text-xl md:text-3xl lg:text-4xl text-gray-800 font-bold leading-snug">
+          To be a leading benchmark for private healthcare in Nigeria and Africa, distinguished by excellence in cardiology and setting new standards in quality.
+        </p>
+      </div>
 
-        {/* Vision Card */}
-        <motion.div
-          whileHover={{ y: -10 }}
-          className="group relative bg-[#f0fdfc] rounded-t-[2rem] rounded-b-none transition-all duration-500 border-b-[5px] border-teal-500 flex flex-col h-full overflow-hidden"
-        >
-          <div className="px-5 pt-12 pb-10 space-y-6 flex-grow">
-            <p className="text-gray-700 leading-relaxed font-semibold text-sm">
-              To be a leading benchmark for private healthcare in Nigeria and Africa, distinguished by excellence in cardiology and setting new standards in quality.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Quality Card */}
-        <motion.div
-          whileHover={{ y: -10 }}
-          className="group relative bg-[#f0fdfc] rounded-t-[2rem] rounded-b-none transition-all duration-500 border-b-[5px] border-teal-500 flex flex-col h-full overflow-hidden"
-        >
-          <div className="px-5 pt-12 pb-10 space-y-6 flex-grow">
-            <p className="text-gray-700 leading-relaxed font-semibold text-sm">
-              We follow strict international safety guidelines and comprehensive infection control measures. Each procedure is overseen by a dedicated safety team.
-            </p>
-          </div>
-        </motion.div>
+      {/* --- Quality Section --- */}
+      <div className="max-w-6xl mx-auto px-4 mb-32">
+        <p className="text-sm mb-2 text-teal-600 font-bold uppercase tracking-wider">Quality of Care</p>
+        <p className="text-xl md:text-3xl lg:text-4xl text-gray-800 font-bold leading-snug">
+          We follow strict international safety guidelines and comprehensive infection control measures. Each procedure is overseen by a dedicated safety team.
+        </p>
       </div>
     </div>
   );
