@@ -45,39 +45,39 @@ function page() {
       <AboutSection />
 
       {/* --- NEON HEART FOUNDATION TEASER --- */}
-      <div className="max-w-7xl mx-auto px-4 my-24">
-        <div className="relative bg-[#0a4d4a] rounded-[2rem] p-10 md:p-16 overflow-hidden shadow-xl">
-          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+      <div className="max-w-7xl mx-auto px-4 my-32">
+        <div className="relative bg-[#0a4d4a] rounded-[3rem] p-12 md:p-20 lg:p-24 overflow-hidden shadow-2xl">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
               <div className="flex items-center gap-4">
-                <div className="w-8 h-[1px] bg-teal-400" />
-                <span className="text-teal-400 font-bold uppercase tracking-widest text-[10px]">Our Commitment</span>
+                <div className="w-12 h-[1px] bg-teal-400" />
+                <span className="text-teal-400 font-bold uppercase tracking-[0.3em] text-xs">Our Commitment</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight">
                 Introducing <br />
-                <span className="text-teal-400">Neon Heart Foundation</span>
+                <span className="text-teal-400">Neon Heart <br />Foundation</span>
               </h2>
             </div>
 
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <p className="text-lg text-teal-50 leading-relaxed font-light">
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <p className="text-xl md:text-2xl text-teal-50 leading-relaxed font-light">
                   Dedicated to raising awareness, supporting mothers, and improving outcomes for women affected by <span className="font-bold text-teal-400">PPCM</span>.
                 </p>
                 <div className="h-[1px] w-full bg-white/10" />
-                <p className="text-teal-100/70 text-base leading-relaxed italic">
+                <p className="text-teal-200/60 text-lg md:text-xl leading-relaxed italic font-medium">
                   "No mother should lose her life while bringing life."
                 </p>
               </div>
 
-              <div className="pt-4">
-                <Link href="/foundation" className="inline-flex items-center gap-4 group/btn">
-                  <div className="px-8 py-3.5 bg-white text-[#0a4d4a] rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-teal-50">
+              <div className="pt-6">
+                <Link href="/foundation" className="inline-flex items-center gap-6 group/btn">
+                  <div className="px-10 py-4 bg-white text-[#0a4d4a] rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all duration-300 hover:bg-teal-50 hover:shadow-lg hover:shadow-white/10">
                     Get To Know Us
                   </div>
-                  <div className="w-12 h-12 rounded-xl border border-white/20 flex items-center justify-center text-white group-hover/btn:border-teal-400 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5" />
+                  <div className="w-14 h-14 rounded-2xl border border-white/20 flex items-center justify-center text-white group-hover/btn:border-teal-400 group-hover/btn:bg-teal-400 group-hover/btn:text-[#0a4d4a] transition-all duration-300">
+                    <ArrowRight className="w-6 h-6" />
                   </div>
                 </Link>
               </div>
