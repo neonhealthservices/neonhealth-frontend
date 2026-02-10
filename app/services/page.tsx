@@ -49,41 +49,60 @@ function page() {
       <CardiologyServices ShowMoreServices />
 
       {/* Collaboration Section */}
-      <div className="py-24 bg-[#f0fdfc] text-[#0a4d4a] relative border-y border-teal-50">
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <div className="space-y-4 mb-16">
-            <h2 className="text-3xl md:text-5xl font-black leading-tight uppercase tracking-tight">
+      <div className="py-24 bg-white text-[#0a4d4a] relative">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="space-y-4 mb-16 text-center">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight uppercase tracking-tighter">
               In Collaboration with <br />
               <span className="text-teal-600">Other Facilities</span>
             </h2>
-            <div className="inline-flex items-center gap-4">
-              <div className="h-[1px] w-8 bg-teal-400" />
-              <p className="text-sm md:text-base text-teal-700 font-bold uppercase tracking-[0.3em]">
+            <div className="flex flex-col items-center gap-4">
+              <div className="h-1.5 w-24 bg-teal-500 rounded-full" />
+              <p className="text-lg md:text-xl text-teal-700 font-bold uppercase tracking-[0.4em]">
                 Within and Outside the Country
               </p>
-              <div className="h-[1px] w-8 bg-teal-400" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-teal-100 flex items-center justify-center group hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-500"
+              whileHover={{ y: -10 }}
+              className="group relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 border border-teal-50"
             >
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-center leading-tight">
-                Interventional <br />
-                <span className="text-teal-600">Cardiology</span>
-              </h3>
+              <Image
+                src="/images/interventional-cardiology.png"
+                alt="Interventional Cardiology"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-12">
+                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                  Interventional <br />
+                  <span className="text-teal-400">Cardiology</span>
+                </h3>
+                <div className="h-1.5 w-16 bg-teal-400 mt-6 group-hover:w-32 transition-all duration-500" />
+              </div>
             </motion.div>
 
             <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-teal-100 flex items-center justify-center group hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-500"
+              whileHover={{ y: -10 }}
+              className="group relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 border border-teal-50"
             >
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-center leading-tight">
-                Electrophysiology <br />
-                <span className="text-teal-600"> & Pacing</span>
-              </h3>
+              <Image
+                src="/images/cardiac-monitor.png"
+                alt="Electrophysiology & Pacing"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-12">
+                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                  Electrophysiology <br />
+                  <span className="text-teal-400"> & Pacing</span>
+                </h3>
+                <div className="h-1.5 w-16 bg-teal-400 mt-6 group-hover:w-32 transition-all duration-500" />
+              </div>
             </motion.div>
           </div>
         </div>

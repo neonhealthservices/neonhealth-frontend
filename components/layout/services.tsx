@@ -22,44 +22,54 @@ const CardiologyServices = ({
 }: CardiologyServiceProps) => {
   const services = [
     {
+      image: "/images/hospital-hall.jpg",
+      title: "CARDIOLOGY SERVICES",
+      desc: "Specialized care for heart health, including prevention, diagnosis, and treatment of various cardiac conditions."
+    },
+    {
       image: "/images/chest-heart.png",
-      title: "Heart Disease",
-      desc: "Comprehensive diagnostic and therapeutic solutions for chronic heart conditions. We specialize in managing coronary artery disease, heart failure, and arrhythmias with personalized care plans."
+      title: "DIAGNOSING HEART DISEASES",
+      desc: "Comprehensive diagnostic procedures to identify and evaluate various heart conditions using state-of-the-art technology."
     },
     {
       image: "/images/vascular.png",
-      title: "Vascular Health",
-      desc: "Expert care for your circulatory system. Our specialists treat peripheral artery disease, varicose veins, and deep vein thrombosis using the latest minimally invasive techniques."
-    },
-    {
-      image: "/images/metabolic.png",
-      title: "Metabolic Care",
-      desc: "Managing the intersection of heart health and metabolism. Focused treatment for hypertension, diabetes-related cardiac issues, and cholesterol management."
-    },
-    {
-      image: "/images/holter.png",
-      title: "Holter ECG",
-      desc: "Continuous 24-48 hour cardiac monitoring to capture irregular heart rhythms that a standard ECG might miss during a short office visit."
-    },
-    {
-      image: "/images/doppler.png",
-      title: "Doppler Ultrasonography",
-      desc: "Advanced imaging to visualize the speed and direction of blood flow throughout your heart and vessels using harmless sound waves."
-    },
-    {
-      image: "/images/electro.png",
-      title: "Advanced ECG",
-      desc: "Precision recording of the electrical signals in your heart to quickly diagnose heart attacks and abnormal rhythms."
-    },
-    {
-      image: "/images/pressure.png",
-      title: "BP Monitoring",
-      desc: "Ambulatory blood pressure monitoring over a full 24-hour cycle to get a true picture of your vascular health outside the hospital."
+      title: "VASCULAR DISORDERS",
+      desc: "Expert diagnosis and treatment of conditions affecting the blood vessels, ensuring optimal circulatory health."
     },
     {
       image: "/images/echo.png",
-      title: "Echocardiography",
-      desc: "Real-time ultrasound imaging of the heart to evaluate its structure, valves, and pumping capacity with extreme precision."
+      title: "ECHOCARDIOGRAPHY",
+      desc: "Advanced ultrasound imaging of the heart to assess structure and function."
+    },
+    {
+      image: "/images/electro.png",
+      title: "ELECTROCARDIOGRAPHY",
+      desc: "Precision recording of heart electrical activity to diagnose arrhythmias and other cardiac issues."
+    },
+    {
+      image: "/images/pressure.png",
+      title: "AMBULATORY BP MONITORING",
+      desc: "Continuous blood pressure monitoring over 24 hours to track cardiovascular health in real-world settings."
+    },
+    {
+      image: "/images/holter.png",
+      title: "HOLTER ECG",
+      desc: "Extended cardiac rhythm monitoring to capture irregularities over 24 to 48 hours."
+    },
+    {
+      image: "/images/blood-biomarker.png",
+      title: "BLOOD BIOMARKER TESTING",
+      desc: "Analyzing blood samples for specific markers that indicate heart health and potential risks."
+    },
+    {
+      image: "/images/specialized-clinic.png",
+      title: "HIGHLY SPECIALIZED CARDIOLOGY CLINIC",
+      desc: "Dedicated clinical excellence providing specialized consultations and advanced cardiac care."
+    },
+    {
+      image: "/images/metabolic.png",
+      title: "METABOLIC DISORDER",
+      desc: "Managing metabolic conditions that impact cardiovascular health, including cholesterol and hypertension."
     },
   ];
 
@@ -106,45 +116,59 @@ const CardiologyServices = ({
 
         {/* Services Grid */}
         {!hideCards && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-16 md:gap-24 pt-10">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative h-80 rounded-[2rem] overflow-hidden hover:shadow-2xl hover:shadow-teal-900/10 transition-all duration-500 border border-gray-100"
+                className="group relative h-auto min-h-[350px] md:h-[400px] flex items-center"
               >
-                {/* Background Image with Overlay */}
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a]/80 via-[#0a4d4a]/20 to-transparent transition-opacity duration-500" />
+                {/* Number Overlay - Straddling the left edge */}
+                <div className="absolute -left-8 md:left-5 z-30 pointer-events-none">
+                  <span className="text-8xl md:text-8xl font-black text-teal-600/20 select-none leading-none tracking-tighter transition-all duration-700 group-hover:text-teal-400/40 group-hover:scale-110 block">
+                    {(index + 1).toString().padStart(2, '0')}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 h-full p-8 flex flex-col justify-end">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-xl font-bold text-white mb-2 leading-tight">
-                      {service.title}
-                    </h3>
-                    <div className="h-0.5 w-0 group-hover:w-12 bg-teal-400 mb-4 transition-all duration-500" />
-                    <p className="text-white/70 text-sm font-light leading-snug line-clamp-2 md:line-clamp-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      {service.desc}
-                    </p>
+                {/* Main Card Container */}
+                <div className="relative h-full w-full rounded-[3rem] md:rounded-[4rem] overflow-hidden border border-gray-100 shadow-2xl transition-all duration-700 bg-white group-hover:shadow-teal-900/20">
+                  {/* Background Image with Overlay */}
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-all duration-[2000ms] ease-out"
+                    />
+                    {/* Multi-layered overlay for ultimate readability */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0a4d4a] via-[#0a4d4a]/80 to-[#0a4d4a]/20 md:via-[#0a4d4a]/60 md:to-transparent z-10" />
+                    <div className="absolute inset-0 bg-[#0a4d4a]/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
                   </div>
-                </div>
 
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white">
-                    <ArrowRight className="w-5 h-5 -rotate-45" />
+                  {/* Content Container */}
+                  <div className="relative z-20 h-full p-8 md:p-20 flex flex-col justify-center max-w-4xl ml-12 md:ml-32">
+                    <div className="space-y-6">
+
+
+                      <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] uppercase tracking-tight">
+                        {service.title}
+                      </h3>
+
+                      <div className="h-2 w-24 bg-teal-500 rounded-full" />
+
+                      <p className="text-white/90 text-base md:text-xl font-medium leading-relaxed max-w-2xl">
+                        {service.desc}
+                      </p>
+
+
+                    </div>
                   </div>
+
+                  {/* Corner Visual Decoration */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-teal-400/10 blur-[100px] -mr-32 -mt-32 rounded-full pointer-events-none" />
                 </div>
               </motion.div>
             ))}
