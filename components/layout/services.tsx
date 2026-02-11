@@ -21,11 +21,7 @@ const CardiologyServices = ({
   hideCards = false
 }: CardiologyServiceProps) => {
   const services = [
-    {
-      image: "/images/hospital-hall.jpg",
-      title: "CARDIOLOGY SERVICES",
-      desc: "Specialized care for heart health, including prevention, diagnosis, and treatment of various cardiac conditions."
-    },
+
     {
       image: "/images/chest-heart.png",
       title: "DIAGNOSING HEART DISEASES",
