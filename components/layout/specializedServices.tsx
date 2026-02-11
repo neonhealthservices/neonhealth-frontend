@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { } from 'lucide-react'; // Removing unused imports
 
 const otherServices = [
-    { title: "GENERAL INTERNAL MEDICINE", image: "/images/checkup2.png" },
-    { title: "EMERGENCY MEDICINE", image: "/images/emergency.png" },
+    { title: "GENERAL INTERNAL MEDICINE", image: "/images/internal-medicine.jpeg" },
+    { title: "EMERGENCY MEDICINE", image: "/images/emergency.jpeg" },
     { title: "ENDOCRINOLOGY", image: "/images/endocrinology.png" },
     { title: "PULMONOLOGY", image: "/images/lungs.jpg" },
     { title: "NEPHROLOGY", image: "/images/nephro.png" },

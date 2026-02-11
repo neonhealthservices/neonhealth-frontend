@@ -37,17 +37,17 @@ const CardiologyServices = ({
       desc: "Expert diagnosis and treatment of conditions affecting the blood vessels, ensuring optimal circulatory health."
     },
     {
-      image: "/images/echo.png",
+      image: "/images/echocardiography.jpeg",
       title: "ECHOCARDIOGRAPHY",
       desc: "Advanced ultrasound imaging of the heart to assess structure and function."
     },
     {
-      image: "/images/electro.png",
+      image: "/images/ecg.jpeg",
       title: "ELECTROCARDIOGRAPHY",
       desc: "Precision recording of heart electrical activity to diagnose arrhythmias and other cardiac issues."
     },
     {
-      image: "/images/pressure.png",
+      image: "/images/ambulatory-pressure.jpeg",
       title: "AMBULATORY BP MONITORING",
       desc: "Continuous blood pressure monitoring over 24 hours to track cardiovascular health in real-world settings."
     },
@@ -88,7 +88,7 @@ const CardiologyServices = ({
               <span>Medical Excellence</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 tracking-tight text-center">
-              Our Clinical <span className="text-teal-600">Specialties</span>
+              CARDIOLOGY <span className="text-teal-600">SERVICES</span>
             </h2>
             <p className="mt-6 text-gray-600 text-lg md:text-xl leading-relaxed font-normal text-center">
               Beyond our recognized expertise in cardiology, we provide a multidisciplinary approach to healthcare, integrating advanced technology with compassionate medical practice.
