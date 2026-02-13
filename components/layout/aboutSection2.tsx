@@ -65,7 +65,7 @@ export default function AboutSection({ variant = 'default' }: AboutSectionProps)
 
 
             <h2 className="text-4xl md:text-3xl font-black text-[#0a4d4a] leading-tight tracking-tight">
-              Advanced Care. Trusted Professional. Exceptional Outcome.
+              Advanced Care. Trusted Professionals. Exceptional Outcome.
             </h2>
           </div>
 

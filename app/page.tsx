@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutUs />
-      <CardiologyServices hideCards={true} />
+      <CardiologyServices hideCards={true} header="OUR"/>
       <CoreValues />
       <FoundationTeaser />
       <LatestBlogs />

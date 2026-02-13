@@ -52,7 +52,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-3.5 h-3.5" />
-            <span>Plot 132 A Line, Ewet Housing Estate, Uyo</span>
+            <span>Plot 132 Unit A, G Line Ewet Housing Estate, Uyo</span>
           </div>
         </div>
       </div>
