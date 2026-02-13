@@ -58,7 +58,7 @@ function page() {
                      className="group relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 border border-teal-50"
                   >
                      <Image
-                        src="/images/interventionalCard.jpg"
+                        src="/images/interventional-cardiology.jpg"
                         alt="Interventional Cardiology"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-1000"
@@ -78,7 +78,7 @@ function page() {
                      className="group relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 border border-teal-50"
                   >
                      <Image
-                        src="/images/interventional-cardiology.png"
+                        src="/images/electro.png"
                         alt="Electrophysiology & Pacing"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-1000"
