@@ -60,7 +60,7 @@ export default function FoundationTeaser() {
                             href="/foundation"
                             className="inline-flex items-center gap-4 bg-teal-500 hover:bg-teal-400 text-white font-bold px-10 py-5 rounded-full transition-all duration-300 shadow-xl"
                         >
-                            <span>LEARN MORE ABOUT FOUNDATION</span>
+                            <span>LEARN MORE ABOUT OUR FOUNDATION</span>
                             <ArrowRight className="w-5 h-5" />
                         </Link>
                     </motion.div>
