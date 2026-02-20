@@ -74,8 +74,8 @@ export default function ContactForm() {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 mt-1" />
                 <p>
-                  Plot 132 Unit A, G Line Ewet Housing Estate,<br />
-                  Uyo, Akwa Ibom State
+                  Neon Health Services, Plot 132, A line (G Lane) Ewet Housing Estate,<br />
+                  Uyo.
                 </p>
               </div>
 
