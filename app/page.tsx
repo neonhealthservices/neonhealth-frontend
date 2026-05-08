@@ -7,6 +7,7 @@ import LatestBlogs from "@/components/layout/LatestBlogs";
 import Navbar from "@/components/ui/navbar";
 import CoreValues from "@/components/layout/coreValues";
 import FoundationTeaser from "@/components/layout/foundationTeaser";
+import ReviewSection from "@/components/layout/reviews";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CardiologyServices hideCards={true} header="OUR"/>
       <CoreValues />
       <FoundationTeaser />
+      <ReviewSection />
       <LatestBlogs />
       <ContactForm />
       <Footer />

@@ -9,6 +9,7 @@ export default function AdminDashboard() {
         totalBlogs: 0,
         publishedBlogs: 0,
         draftBlogs: 0,
+        totalReviews: 0,
     });
     const [loading, setLoading] = useState(true);
 
@@ -25,11 +26,21 @@ export default function AdminDashboard() {
 
             if (res.ok) {
                 const blogs = data.blogs || [];
-                setStats({
+                setStats(prev => ({
+                    ...prev,
                     totalBlogs: data.pagination.total,
                     publishedBlogs: blogs.filter((b: any) => b.status === 'published').length,
                     draftBlogs: blogs.filter((b: any) => b.status === 'draft').length,
-                });
+                }));
+            }
+
+            const reviewsRes = await fetch('/api/reviews');
+            if (reviewsRes.ok) {
+                const reviewsData = await reviewsRes.json();
+                setStats(prev => ({
+                    ...prev,
+                    totalReviews: Array.isArray(reviewsData) ? reviewsData.length : 0,
+                }));
             }
         } catch (error) {
             console.error('Error fetching stats:', error);
@@ -86,6 +97,19 @@ export default function AdminDashboard() {
                         </div>
                     </div>
                 </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div className="flex items-center">
+                        <div className="p-3 rounded-full bg-teal-100 text-teal-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                        </div>
+                        <div className="ml-4">
+                            <p className="text-sm font-medium text-gray-500">Total Reviews</p>
+                            <p className="text-2xl font-semibold text-gray-900">{stats.totalReviews}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="mt-8 flex gap-4">
@@ -103,6 +127,12 @@ export default function AdminDashboard() {
                     className="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 transition-colors font-medium flex items-center"
                 >
                     Manage Posts
+                </Link>
+                <Link
+                    href="/admin/reviews"
+                    className="px-6 py-3 bg-teal-600 text-white rounded-lg shadow-sm hover:bg-teal-700 transition-colors font-medium flex items-center"
+                >
+                    Manage Reviews
                 </Link>
             </div>
         </div>
