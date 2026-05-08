@@ -54,7 +54,6 @@ const BlogSchema = new Schema<IBlog>(
 );
 
 // Index for better query performance
-BlogSchema.index({ slug: 1 });
 BlogSchema.index({ status: 1, createdAt: -1 });
 BlogSchema.index({ tags: 1 });
 

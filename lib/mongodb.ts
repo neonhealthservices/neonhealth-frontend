@@ -1,4 +1,8 @@
 import mongoose from 'mongoose';
+// Pre-register models to avoid MissingSchemaError in Next.js
+import '@/models/Admin';
+import '@/models/Blog';
+import '@/models/Review';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 

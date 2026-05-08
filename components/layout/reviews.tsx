@@ -16,7 +16,6 @@ interface Review {
 export default function ReviewSection() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     fetchReviews();
@@ -72,30 +71,9 @@ export default function ReviewSection() {
     }
   };
 
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
-  };
 
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
 
   const paginate = (newDirection: number) => {
-    setDirection(newDirection);
     setCurrentIndex((prevIndex) => (prevIndex + newDirection + reviews.length) % reviews.length);
   };
 
@@ -146,23 +124,33 @@ export default function ReviewSection() {
         </div>
 
         {/* Reviews Carousel/Grid */}
-        <div className="relative min-h-[300px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <AnimatePresence initial={false} custom={direction}>
-              {reviews.map((review, index) => {
-                const isVisible = (index >= currentIndex && index < currentIndex + 3) || 
-                                 (currentIndex + 3 > reviews.length && (index >= currentIndex || index < (currentIndex + 3) % reviews.length));
-                
-                return (
+        <div className="relative min-h-[400px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <AnimatePresence mode="popLayout" initial={false}>
+              {reviews
+                .map((review, index) => ({ review, index }))
+                .filter(({ index }) => {
+                  return (index >= currentIndex && index < currentIndex + 3) || 
+                         (currentIndex + 3 > reviews.length && (index >= currentIndex || index < (currentIndex + 3) % reviews.length));
+                })
+                .sort((a, b) => {
+                  // Ensure correct order in the grid
+                  const posA = (a.index - currentIndex + reviews.length) % reviews.length;
+                  const posB = (b.index - currentIndex + reviews.length) % reviews.length;
+                  return posA - posB;
+                })
+                .map(({ review }) => (
                   <motion.div
                     key={review._id}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ 
-                      opacity: isVisible ? 1 : 0, 
-                      scale: isVisible ? 1 : 0.95,
-                      display: isVisible ? 'block' : 'none'
+                    layout
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                    transition={{ 
+                      duration: 0.5,
+                      ease: [0.4, 0, 0.2, 1],
+                      layout: { duration: 0.4 }
                     }}
-                    transition={{ duration: 0.4 }}
                     className="bg-gray-50 rounded-3xl p-8 lg:p-10 flex flex-col h-full border border-transparent hover:border-teal-100 hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-500"
                   >
                     <div className="mb-6">
@@ -177,8 +165,7 @@ export default function ReviewSection() {
                       <p className="text-gray-900 font-medium italic">By {review.patientName}</p>
                     </div>
                   </motion.div>
-                );
-              })}
+                ))}
             </AnimatePresence>
           </div>
         </div>
