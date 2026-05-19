@@ -74,9 +74,9 @@ function BlogListContent() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-[#ECF9F7] to-white min-h-screen py-12 md:py-20">
+    <div className="bg-gradient-to-b from-[#ECF9F7] to-white min-h-screen pt-20 pb-12 md:pt-32 md:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14 pt-16 lg:pt-10">
+        <div className="text-center max-w-3xl mx-auto mb-14 pt-8 lg:pt-12">
           <span className="inline-block py-1 px-3 rounded-full bg-teal-100 text-[#1a7f7a] text-xs font-bold tracking-wider uppercase mb-4">
             Health & Wellness
           </span>

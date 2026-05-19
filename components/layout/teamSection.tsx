@@ -69,7 +69,7 @@ export default async function TeamSection({ detailed = false, showHeader = true,
 
                   {/* Bio Group */}
                   <p className="text-gray-700 font-semibold leading-relaxed text-lg">
-                    {detailed ? member.fullBio || member.shortBio : (member.shortBio || member.fullBio)}
+                    {member.fullBio}
                   </p>
                 </div>
               </article>

@@ -5,9 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 // Navbar Component
 export default function Navbar() {
@@ -63,9 +60,9 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`w-full transition-all duration-300 relative ${scrolled
-          ? "bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-100"
-          : "bg-white/90 backdrop-blur-md border-b border-white/10"
+        className={`w-full transition-all duration-300 relative border-b border-gray-100 ${scrolled
+          ? "bg-white/95 backdrop-blur-lg"
+          : "bg-white/90 backdrop-blur-md"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center h-[60px] md:h-[90px]">
@@ -90,7 +87,7 @@ export default function Navbar() {
 
           {/* Center Column: Desktop Navigation (Takes 1/3 space, perfectly centered) */}
           <div className="hidden md:flex flex-1 justify-center items-center">
-            <div className={`${inter.className} flex items-center space-x-6 lg:space-x-10`}>
+            <div className="flex items-center space-x-6 lg:space-x-10">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -155,7 +152,7 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`${inter.className} px-4 py-3 rounded-xl transition-all duration-200 text-xs font-black uppercase tracking-widest ${isActive
+                      className={`px-4 py-3 rounded-xl transition-all duration-200 text-xs font-black uppercase tracking-widest ${isActive
                         ? 'bg-teal-50 text-teal-600 shadow-sm'
                         : 'text-gray-900 hover:bg-gray-50 hover:text-teal-600'
                         }`}
