@@ -8,6 +8,7 @@ import Navbar from "@/components/ui/navbar";
 import CoreValues from "@/components/layout/coreValues";
 import FoundationTeaser from "@/components/layout/foundationTeaser";
 import ReviewSection from "@/components/layout/reviews";
+import TeamSection from "@/components/layout/teamSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutUs />
+      <TeamSection limit={2} />
       <CardiologyServices hideCards={true} header="OUR"/>
       <CoreValues />
       <FoundationTeaser />

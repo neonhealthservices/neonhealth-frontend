@@ -1,25 +1,24 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
 export default function AdminNav() {
     const pathname = usePathname();
     const router = useRouter();
-    const [userRole, setUserRole] = useState<string | null>(null);
-
-    useEffect(() => {
+    const [userRole] = useState<string | null>(() => {
+        if (typeof window === 'undefined') return null;
         const storedUser = localStorage.getItem('adminUser');
-        if (storedUser) {
-            try {
-                const parsed = JSON.parse(storedUser);
-                setUserRole(parsed.role);
-            } catch (e) {
-                console.error('Failed to parse user', e);
-            }
+        if (!storedUser) return null;
+        try {
+            const parsed = JSON.parse(storedUser);
+            return parsed.role || null;
+        } catch (e) {
+            console.error('Failed to parse user', e);
+            return null;
         }
-    }, []);
+    });
 
     const handleLogout = () => {
         localStorage.removeItem('adminToken');
@@ -53,6 +52,13 @@ export default function AdminNav() {
             name: 'Manage Reviews', href: '/admin/reviews', icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+            )
+        },
+        {
+            name: 'Manage Team', href: '/admin/team', icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 00-5.8-3.6M17 20H7m10 0v-2c0-.7-.1-1.4-.3-2M7 20H2v-2a4 4 0 015.8-3.6M7 20v-2c0-.7.1-1.4.3-2m0 0a5 5 0 019.4 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 2a2 2 0 11-4 0 2 2 0 014 0zM7 9a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
             )
         },

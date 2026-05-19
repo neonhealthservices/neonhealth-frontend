@@ -5,49 +5,63 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import Link from 'next/link';
 
 export default function AdminDashboard() {
+    type BlogStatus = {
+        status?: 'draft' | 'published';
+    };
+
     const [stats, setStats] = useState({
         totalBlogs: 0,
         publishedBlogs: 0,
         draftBlogs: 0,
         totalReviews: 0,
+        totalTeamMembers: 0,
     });
     const [loading, setLoading] = useState(true);
 
-    // In a real app we would have an API for stats, 
+    // In a real app we would have an API for stats,
     // for now we'll fetch all blogs and calculate locally
     useEffect(() => {
+        const fetchStats = async () => {
+            try {
+                const res = await fetch('/api/blogs?limit=100');
+                const data = await res.json();
+
+                if (res.ok) {
+                    const blogs: BlogStatus[] = Array.isArray(data.blogs) ? data.blogs : [];
+                    setStats(prev => ({
+                        ...prev,
+                        totalBlogs: data.pagination.total,
+                        publishedBlogs: blogs.filter((b) => b.status === 'published').length,
+                        draftBlogs: blogs.filter((b) => b.status === 'draft').length,
+                    }));
+                }
+
+                const reviewsRes = await fetch('/api/reviews');
+                if (reviewsRes.ok) {
+                    const reviewsData = await reviewsRes.json();
+                    setStats(prev => ({
+                        ...prev,
+                        totalReviews: Array.isArray(reviewsData) ? reviewsData.length : 0,
+                    }));
+                }
+
+                const teamRes = await fetch('/api/team?includeInactive=1');
+                if (teamRes.ok) {
+                    const teamData = await teamRes.json();
+                    setStats(prev => ({
+                        ...prev,
+                        totalTeamMembers: Array.isArray(teamData) ? teamData.length : 0,
+                    }));
+                }
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
         fetchStats();
     }, []);
-
-    const fetchStats = async () => {
-        try {
-            const res = await fetch('/api/blogs?limit=100');
-            const data = await res.json();
-
-            if (res.ok) {
-                const blogs = data.blogs || [];
-                setStats(prev => ({
-                    ...prev,
-                    totalBlogs: data.pagination.total,
-                    publishedBlogs: blogs.filter((b: any) => b.status === 'published').length,
-                    draftBlogs: blogs.filter((b: any) => b.status === 'draft').length,
-                }));
-            }
-
-            const reviewsRes = await fetch('/api/reviews');
-            if (reviewsRes.ok) {
-                const reviewsData = await reviewsRes.json();
-                setStats(prev => ({
-                    ...prev,
-                    totalReviews: Array.isArray(reviewsData) ? reviewsData.length : 0,
-                }));
-            }
-        } catch (error) {
-            console.error('Error fetching stats:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     if (loading) return <LoadingSpinner />;
 
@@ -110,6 +124,20 @@ export default function AdminDashboard() {
                         </div>
                     </div>
                 </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div className="flex items-center">
+                        <div className="p-3 rounded-full bg-cyan-100 text-cyan-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 00-5.8-3.6M17 20H7m10 0v-2c0-.7-.1-1.4-.3-2M7 20H2v-2a4 4 0 015.8-3.6M7 20v-2c0-.7.1-1.4.3-2m0 0a5 5 0 019.4 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div className="ml-4">
+                            <p className="text-sm font-medium text-gray-500">Team Members</p>
+                            <p className="text-2xl font-semibold text-gray-900">{stats.totalTeamMembers}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="mt-8 flex gap-4">
@@ -133,6 +161,12 @@ export default function AdminDashboard() {
                     className="px-6 py-3 bg-teal-600 text-white rounded-lg shadow-sm hover:bg-teal-700 transition-colors font-medium flex items-center"
                 >
                     Manage Reviews
+                </Link>
+                <Link
+                    href="/admin/team"
+                    className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 transition-colors font-medium flex items-center"
+                >
+                    Manage Team
                 </Link>
             </div>
         </div>

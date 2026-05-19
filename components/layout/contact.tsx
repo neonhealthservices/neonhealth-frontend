@@ -72,10 +72,12 @@ export default function ContactForm() {
             <div className="space-y-8">
               {/* Address */}
               <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 mt-1" />
+                <MapPin className="w-6 h-6 mt-1 flex-shrink-0" />
                 <p>
-                  Neon Health Services, Plot 132, A line (G Lane) Ewet Housing Estate,<br />
-                  Uyo.
+                  Neon Health Services,<br />
+                  Plot 132, A Line, Ewet Housing Estate,<br />
+                  Uyo.<br />
+                  <span className="text-teal-200 text-xs block mt-1 font-medium">Landmark: Kings and Queens School</span>
                 </p>
               </div>
 

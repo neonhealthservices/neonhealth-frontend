@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import '@/models/Admin';
 import '@/models/Blog';
 import '@/models/Review';
+import '@/models/TeamMember';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -26,7 +27,7 @@ declare global {
     var mongoose: MongooseCache | undefined;
 }
 
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+const cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
 if (!global.mongoose) {
     global.mongoose = cached;
