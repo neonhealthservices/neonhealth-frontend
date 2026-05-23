@@ -41,14 +41,14 @@ export default async function TeamSection({ detailed = false, showHeader = true,
                   }`}
               >
                 {/* Image Panel */}
-                <div className={`relative h-64 sm:h-72 md:h-[300px] w-full rounded-2xl md:rounded-3xl overflow-hidden ${!isEven ? 'md:order-2' : 'md:order-1'}`}>
+                <div className={`relative h-[380px] w-full max-w-[300px] mx-auto rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-teal-50 to-emerald-50/40 border border-teal-100/50 shadow-sm ${!isEven ? 'md:order-2' : 'md:order-1'}`}>
                   <Image
                     src={member.image}
                     alt={member.imageAlt}
                     fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-teal-950/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-950/5 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 {/* Content Panel */}
