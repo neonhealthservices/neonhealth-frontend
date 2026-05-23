@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden flex items-center pt-48 pb-20">
+    <div className="relative w-full min-h-screen overflow-hidden flex items-center pt-24 md:pt-48 pb-20">
       {/* Background Image - Moved to cover entire parent */}
       <div className="absolute inset-0">
         <motion.img

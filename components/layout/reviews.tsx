@@ -16,6 +16,14 @@ interface Review {
 export default function ReviewSection() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     fetchReviews();
@@ -23,11 +31,11 @@ export default function ReviewSection() {
 
   useEffect(() => {
     if (reviews.length === 0) return;
-    
+
     const interval = setInterval(() => {
       paginate(1);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, [reviews, currentIndex]);
 
@@ -85,16 +93,16 @@ export default function ReviewSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
+            <motion.h2
+              initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 uppercase tracking-tight"
             >
               Hear from our Patients
             </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
+            <motion.p
+              initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
@@ -105,7 +113,7 @@ export default function ReviewSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 max-sm:hidden">
             <button
               onClick={() => paginate(-1)}
               className="p-4 rounded-full border border-teal-100 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300 group shadow-sm"
@@ -130,8 +138,8 @@ export default function ReviewSection() {
               {reviews
                 .map((review, index) => ({ review, index }))
                 .filter(({ index }) => {
-                  return (index >= currentIndex && index < currentIndex + 3) || 
-                         (currentIndex + 3 > reviews.length && (index >= currentIndex || index < (currentIndex + 3) % reviews.length));
+                  return (index >= currentIndex && index < currentIndex + 3) ||
+                    (currentIndex + 3 > reviews.length && (index >= currentIndex || index < (currentIndex + 3) % reviews.length));
                 })
                 .sort((a, b) => {
                   // Ensure correct order in the grid
@@ -143,10 +151,10 @@ export default function ReviewSection() {
                   <motion.div
                     key={review._id}
                     layout
-                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    initial={{ opacity: 0, y: isMobile ? 0 : 20, scale: isMobile ? 1 : 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                    transition={{ 
+                    exit={{ opacity: 0, y: isMobile ? 0 : -20, scale: isMobile ? 1 : 0.95 }}
+                    transition={{
                       duration: 0.5,
                       ease: [0.4, 0, 0.2, 1],
                       layout: { duration: 0.4 }
@@ -156,11 +164,11 @@ export default function ReviewSection() {
                     <div className="mb-6">
                       <Quote className="w-8 h-8 text-teal-600/20" />
                     </div>
-                    
+
                     <p className="text-gray-900 text-xl lg:text-2xl leading-relaxed font-semibold mb-8 flex-grow">
                       "{review.content}"
                     </p>
-                    
+
                     <div className="mt-auto pt-6 border-t border-gray-100">
                       <p className="text-gray-900 font-medium italic">By {review.patientName}</p>
                     </div>

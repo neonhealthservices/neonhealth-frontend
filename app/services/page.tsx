@@ -8,7 +8,7 @@ import HealthPackages from "@/components/layout/healthPackages";
 import React from "react";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {Heart, Activity, ShieldCheck, Microscope} from "lucide-react";
+import {Heart, Activity, ShieldCheck, Microscope, Phone} from "lucide-react";
 
 function page() {
    return (
@@ -52,7 +52,7 @@ function page() {
                   </div>
                </div>
 
-               <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+               <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                   <motion.div
                      whileHover={{y: -10}}
                      className="group relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 border border-teal-50"
@@ -63,13 +63,16 @@ function page() {
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-1000"
                      />
-                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/40 to-transparent" />
-                     <div className="absolute inset-x-0 bottom-0 p-12">
-                        <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/60 to-transparent" />
+                     <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 flex flex-col justify-end h-full">
+                        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-tight">
                            Interventional <br />
                            <span className="text-teal-400">Cardiology</span>
                         </h3>
-                        <div className="h-1.5 w-16 bg-teal-400 mt-6 group-hover:w-32 transition-all duration-500" />
+                        <div className="h-1.5 w-16 bg-teal-400 my-4 group-hover:w-32 transition-all duration-500" />
+                        <p className="text-white/90 text-sm md:text-base font-medium opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed max-w-sm">
+                           Minimally invasive, catheter-based treatments for structural heart conditions, including advanced stenting and valve repairs.
+                        </p>
                      </div>
                   </motion.div>
 
@@ -83,13 +86,51 @@ function page() {
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-1000"
                      />
-                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/40 to-transparent" />
-                     <div className="absolute inset-x-0 bottom-0 p-12">
-                        <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/60 to-transparent" />
+                     <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 flex flex-col justify-end h-full">
+                        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-tight">
                            Electrophysiology <br />
                            <span className="text-teal-400"> & Pacing</span>
                         </h3>
-                        <div className="h-1.5 w-16 bg-teal-400 mt-6 group-hover:w-32 transition-all duration-500" />
+                        <div className="h-1.5 w-16 bg-teal-400 my-4 group-hover:w-32 transition-all duration-500" />
+                        <p className="text-white/90 text-sm md:text-base font-medium opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed max-w-sm">
+                           Advanced management of heart rhythm disorders through high-precision catheter ablation and pacemaker integrations.
+                        </p>
+                     </div>
+                  </motion.div>
+
+                  <motion.div
+                     whileHover={{y: -10}}
+                     className="group relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl transition-all duration-500 border border-teal-50"
+                  >
+                     <Image
+                        src="/images/telemedicine.jpg"
+                        alt="Telemedicine Consultation"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a4d4a] via-[#0a4d4a]/60 to-transparent" />
+                     <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 flex flex-col justify-end h-full">
+                        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-tight">
+                           Telemedicine <br />
+                           <span className="text-teal-400">Consultation</span>
+                        </h3>
+                        <div className="h-1.5 w-16 bg-teal-400 my-4 group-hover:w-32 transition-all duration-500" />
+                        
+                        {/* Call button always shown */}
+                        <div className="mb-4">
+                           <a
+                              href="tel:07015875297"
+                              className="inline-flex items-center gap-2 px-6 py-2.5 bg-teal-500 hover:bg-teal-400 text-white font-bold rounded-2xl text-xs uppercase tracking-wider shadow-lg hover:shadow-teal-400/25 transition-all duration-300 active:scale-95"
+                           >
+                              <Phone className="w-3.5 h-3.5" />
+                              <span>Call 07015875297</span>
+                           </a>
+                        </div>
+
+                        <p className="text-white/90 text-sm md:text-base font-medium opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed max-w-sm">
+                           A virtual appointment where you speak with a specialist remotely using a smartphone or computer, allowing for remote diagnosis and care plans without travel.
+                        </p>
                      </div>
                   </motion.div>
                </div>
