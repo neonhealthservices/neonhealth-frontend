@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
     await dbConnect();
     const body = await request.json();
 
-    if (!body.name || !body.role || !body.fullBio || !body.image || !body.imageAlt) {
+    if (!body.name || !body.role || !body.image || !body.imageAlt) {
       return NextResponse.json({ error: 'Missing required team member fields' }, { status: 400 });
     }
 

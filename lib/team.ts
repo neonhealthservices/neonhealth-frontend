@@ -1,6 +1,7 @@
 import dbConnect from '@/lib/mongodb';
 import TeamMember from '@/models/TeamMember';
 import { TeamMemberData } from '@/types/team';
+import { unstable_noStore as noStore } from 'next/cache';
 
 type TeamMemberLean = TeamMemberData & {
   _id: { toString: () => string };
@@ -54,6 +55,7 @@ export const defaultTeamMembers: TeamMemberData[] = [
 ];
 
 export async function getTeamMembers(includeInactive = false): Promise<TeamMemberData[]> {
+  noStore();
   try {
     await dbConnect();
     const filter = includeInactive ? {} : { isActive: true };

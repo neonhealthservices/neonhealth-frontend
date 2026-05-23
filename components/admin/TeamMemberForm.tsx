@@ -5,7 +5,7 @@ import ImageKitUpload from '@/components/admin/ImageKitUpload';
 import { TeamMemberData } from '@/types/team';
 
 type TeamMemberFormProps = {
-  initialData?: TeamMemberData;
+  initialData?: Partial<TeamMemberData>;
   isSubmitting: boolean;
   onSubmit: (data: TeamMemberData) => Promise<void>;
 };
@@ -73,9 +73,8 @@ export default function TeamMemberForm({ initialData, isSubmitting, onSubmit }: 
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Full Bio</label>
+        <label className="block text-sm font-medium text-gray-700">Full Bio (optional)</label>
         <textarea
-          required
           rows={5}
           value={formData.fullBio}
           onChange={(e) => setFormData({ ...formData, fullBio: e.target.value })}

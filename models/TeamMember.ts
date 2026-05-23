@@ -17,7 +17,7 @@ const TeamMemberSchema = new Schema<ITeamMember>(
   {
     name: { type: String, required: true, trim: true },
     role: { type: String, required: true, trim: true },
-    fullBio: { type: String, required: true, trim: true, maxlength: 600 },
+    fullBio: { type: String, required: false, default: '', trim: true, maxlength: 600 },
     image: { type: String, required: true, trim: true },
     imageAlt: { type: String, required: true, trim: true },
     profileUrl: { type: String, default: '', trim: true },
@@ -29,7 +29,10 @@ const TeamMemberSchema = new Schema<ITeamMember>(
 
 TeamMemberSchema.index({ isActive: 1, order: 1, createdAt: -1 });
 
-const TeamMember: Model<ITeamMember> =
-  mongoose.models.TeamMember || mongoose.model<ITeamMember>('TeamMember', TeamMemberSchema);
+if (mongoose.models.TeamMember) {
+  delete mongoose.models.TeamMember;
+}
+
+const TeamMember: Model<ITeamMember> = mongoose.model<ITeamMember>('TeamMember', TeamMemberSchema);
 
 export default TeamMember;

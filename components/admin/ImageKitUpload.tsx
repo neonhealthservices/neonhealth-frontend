@@ -1,7 +1,7 @@
 'use client';
 
 import { IKContext, IKUpload } from 'imagekitio-react';
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 
 interface ImageKitUploadProps {
@@ -12,6 +12,7 @@ interface ImageKitUploadProps {
 
 export default function ImageKitUpload({ onSuccess, currentImage, label = "Cover Image" }: ImageKitUploadProps) {
     const [uploading, setUploading] = useState(false);
+    const uniqueId = useId();
 
     const onError = (err: any) => {
         console.error("ImageKit Upload Error", err);
@@ -46,6 +47,34 @@ export default function ImageKitUpload({ onSuccess, currentImage, label = "Cover
         } catch (error: any) {
             console.error('ImageKit Auth Failed:', error);
             throw new Error(`Authentication request failed: ${error.message}`);
+        }
+    };
+
+    const [isDragging, setIsDragging] = useState(false);
+
+    const onDragOver = (e: React.DragEvent) => {
+        e.preventDefault();
+        setIsDragging(true);
+    };
+
+    const onDragLeave = (e: React.DragEvent) => {
+        e.preventDefault();
+        setIsDragging(false);
+    };
+
+    const onDrop = (e: React.DragEvent) => {
+        e.preventDefault();
+        setIsDragging(false);
+        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+            const file = e.dataTransfer.files[0];
+            const input = document.getElementById(`file-upload-${uniqueId}`) as HTMLInputElement;
+            if (input) {
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                input.files = dataTransfer.files;
+                const event = new Event('change', { bubbles: true });
+                input.dispatchEvent(event);
+            }
         }
     };
 
@@ -87,18 +116,35 @@ export default function ImageKitUpload({ onSuccess, currentImage, label = "Cover
                         onUploadStart={() => setUploading(true)}
                         validateFile={(file: any) => file.size < 5000000} // Max 5MB
                         style={{ display: 'none' }} // Custom button trigger
-                        id="file-upload"
+                        id={`file-upload-${uniqueId}`}
                     />
-                    <label
-                        htmlFor="file-upload"
-                        className={`inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a7f7a] cursor-pointer ${uploading ? 'pointer-events-none opacity-50' : ''}`}
+                    
+                    <div 
+                        onDragOver={onDragOver}
+                        onDragLeave={onDragLeave}
+                        onDrop={onDrop}
+                        className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-lg transition-colors ${
+                            isDragging ? 'border-[#1a7f7a] bg-teal-50' : 'border-gray-300 bg-white hover:border-gray-400'
+                        } ${uploading ? 'pointer-events-none opacity-50' : ''}`}
                     >
-                        <svg className="-ml-1 mr-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        {currentImage ? 'Change Image' : 'Upload Image'}
-                    </label>
-                    <span className="ml-3 text-xs text-gray-500">JPG, PNG, WEBP (Max 5MB)</span>
+                        <div className="space-y-1 text-center">
+                            <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <div className="flex text-sm text-gray-600 justify-center">
+                                <label
+                                    htmlFor={`file-upload-${uniqueId}`}
+                                    className="relative cursor-pointer bg-white rounded-md font-medium text-[#1a7f7a] hover:text-teal-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-[#1a7f7a]"
+                                >
+                                    <span>Upload a file</span>
+                                </label>
+                                <p className="pl-1">or drag and drop</p>
+                            </div>
+                            <p className="text-xs text-gray-500">
+                                PNG, JPG, WEBP up to 5MB
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </IKContext>
         </div>
