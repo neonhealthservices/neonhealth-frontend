@@ -53,14 +53,14 @@ export default async function TeamSection({ detailed = false, showHeader = true,
 
                 {/* Content Panel */}
                 <div className={`flex flex-col justify-center ${!isEven ? 'md:order-1' : 'md:order-2'}`}>
-                  {/* Header Group */}
+                  {/* Header Group (ensure name is always above role) */}
                   <div className="space-y-2">
-                    <span className="text-sm font-black uppercase tracking-[0.2em] text-[#1a7f7a] block">
-                      {member.role}
-                    </span>
-                    <h3 className="text-3xl font-black text-[#0a4d4a] leading-tight tracking-tight group-hover:text-teal-700 transition-colors duration-300">
+                    <h3 className="order-1 text-3xl font-black text-[#0a4d4a] leading-tight tracking-tight group-hover:text-teal-700 transition-colors duration-300">
                       {member.name}
                     </h3>
+                    <span className="order-2 text-sm font-black uppercase tracking-[0.2em] text-[#1a7f7a] block">
+                      {member.role}
+                    </span>
                   </div>
 
                   {/* Soft Smart Divider */}
