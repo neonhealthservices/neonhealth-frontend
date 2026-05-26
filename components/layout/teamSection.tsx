@@ -41,7 +41,7 @@ export default async function TeamSection({ detailed = false, showHeader = true,
                   }`}
               >
                 {/* Image Panel */}
-                <div className={`relative h-[380px] w-full max-w-[300px] mx-auto rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-teal-50 to-emerald-50/40 border border-teal-100/50 shadow-sm ${!isEven ? 'md:order-2' : 'md:order-1'}`}>
+                <div className={`relative h-[380px] w-full max-w-[300px] mx-0 md:mx-auto rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-teal-50 to-emerald-50/40 border border-teal-100/50 shadow-sm ${!isEven ? 'md:order-2' : 'md:order-1'}`}>
                   <Image
                     src={member.image}
                     alt={member.imageAlt}
