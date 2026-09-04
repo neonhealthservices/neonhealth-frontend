@@ -27,7 +27,7 @@ export default function ManageReviews() {
       const res = await fetch('/api/reviews');
       const data = await res.json();
       if (res.ok) {
-        setReviews(data);
+        setReviews(Array.isArray(data) ? data : []);
       }
     } catch (error) {
       console.error('Error fetching reviews:', error);
