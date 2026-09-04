@@ -41,7 +41,19 @@ export default function AdminManagementPage() {
             return;
         }
 
-        const parsedUser = JSON.parse(storedUser);
+        let parsedUser: any = null;
+        try {
+            parsedUser = JSON.parse(storedUser);
+        } catch {
+            router.push('/admin/login');
+            return;
+        }
+
+        if (!parsedUser) {
+            router.push('/admin/login');
+            return;
+        }
+
         setCurrentUser(parsedUser);
 
         if (parsedUser.role !== 'super-admin') {
@@ -62,7 +74,7 @@ export default function AdminManagementPage() {
             });
             const data = await res.json();
             if (res.ok) {
-                setAdmins(data.admins);
+                setAdmins(Array.isArray(data.admins) ? data.admins : []);
             } else {
                 setError(data.message);
             }

@@ -27,10 +27,10 @@ export default function AdminDashboard() {
                 const data = await res.json();
 
                 if (res.ok) {
-                    const blogs: BlogStatus[] = Array.isArray(data.blogs) ? data.blogs : [];
+                    const blogs: BlogStatus[] = Array.isArray(data?.blogs) ? data.blogs : [];
                     setStats(prev => ({
                         ...prev,
-                        totalBlogs: data.pagination.total,
+                        totalBlogs: data?.pagination?.total ?? blogs.length,
                         publishedBlogs: blogs.filter((b) => b.status === 'published').length,
                         draftBlogs: blogs.filter((b) => b.status === 'draft').length,
                     }));
