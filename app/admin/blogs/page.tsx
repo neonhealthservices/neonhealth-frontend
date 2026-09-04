@@ -24,9 +24,11 @@ export default function AdminBlogsPage() {
             const dataDrafts = await resDrafts.json();
 
             if (res.ok && resDrafts.ok) {
+                const publishedList = Array.isArray(data?.blogs) ? data.blogs : [];
+                const draftsList = Array.isArray(dataDrafts?.blogs) ? dataDrafts.blogs : [];
                 // Merge and sort by date
-                const allBlogs = [...data.blogs, ...dataDrafts.blogs].sort((a: IBlog, b: IBlog) =>
-                    new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+                const allBlogs = [...publishedList, ...draftsList].sort((a: IBlog, b: IBlog) =>
+                    new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
                 );
                 setBlogs(allBlogs);
             }
@@ -123,7 +125,9 @@ export default function AdminBlogsPage() {
                                             </span>
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                            {format(new Date(blog.createdAt), 'MMM d, yyyy')}
+                                            {blog.createdAt && !isNaN(new Date(blog.createdAt).getTime())
+                                                ? format(new Date(blog.createdAt), 'MMM d, yyyy')
+                                                : 'N/A'}
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                             {typeof blog.author === 'object' ? blog.author.name : 'Unknown'}

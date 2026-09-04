@@ -19,7 +19,7 @@ export default function ManageTeamMembers() {
       const res = await fetch('/api/team?includeInactive=1');
       const data = await res.json();
       if (res.ok) {
-        setTeamMembers(data);
+        setTeamMembers(Array.isArray(data) ? data : []);
       }
     } catch (error) {
       console.error('Error fetching team members:', error);

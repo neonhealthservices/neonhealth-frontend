@@ -27,8 +27,15 @@ export async function POST(request: NextRequest) {
     await dbConnect();
     const body = await request.json();
 
-    if (!body.name || !body.role || !body.image || !body.imageAlt) {
-      return NextResponse.json({ error: 'Missing required team member fields' }, { status: 400 });
+    const requiredFields = ['name', 'role', 'image', 'imageAlt'];
+    const missing = requiredFields.filter((f) => {
+      const v = (body as any)[f];
+      return v === undefined || v === null || (typeof v === 'string' && v.trim() === '');
+    });
+
+    if (missing.length) {
+      console.error('Missing required team member fields:', missing, 'body:', body);
+      return NextResponse.json({ error: 'Missing required team member fields', missing }, { status: 400 });
     }
 
     const createdMember = await TeamMember.create({
