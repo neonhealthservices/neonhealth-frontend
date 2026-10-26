@@ -51,8 +51,8 @@ export default function Footer() {
               {/* Email */}
               <div className="flex items-center gap-3">
                 <Mail className="w-6 h-6 text-teal-400 flex-shrink-0" />
-                <a href="mailto:neonhealthservices@gmail.com" className="text-teal-400 hover:text-teal-300 transition-colors">
-                  neonhealthservices@gmail.com
+                <a href="mailto:neonhospital@neonhealthservices.com" className="text-teal-400 hover:text-teal-300 transition-colors">
+                  neonhospital@neonhealthservices.com
                 </a>
               </div>
 
