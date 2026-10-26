@@ -45,7 +45,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5" />
-              <span>neonhealthservices@gmail.com</span>
+              <span>neonhospital@neonhealthservices.com</span>
             </div>
           </div>
           <div className="flex items-center gap-2">

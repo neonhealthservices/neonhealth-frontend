@@ -84,8 +84,8 @@ export default function ContactForm() {
               {/* Email */}
               <div className="flex items-start gap-4">
                 <Mail className="w-6 h-6 mt-1" />
-                <a href="mailto:neonhealthservices@gmail.com" className="hover:underline">
-                  neonhealthservices@gmail.com
+                <a href="mailto:neonhospital@neonhealthservices.com" className="hover:underline">
+                  neonhospital@neonhealthservices.com
                 </a>
               </div>
 
